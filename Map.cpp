@@ -3,6 +3,7 @@
 #include "City.h"
 #include "Map.h"
 #include "Road.h"
+#include "helper.h"
 #include <string>
 #include <vector>
 #include <map>
