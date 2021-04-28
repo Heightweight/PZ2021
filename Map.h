@@ -1,12 +1,11 @@
 #pragma once
 #include "City.h"
-#include "Road.H"
+#include "Road.h"
 #include "Route.h"
 #include <vector>
 #include <string>
 
 using namespace std;
-using namespace Orienteering;
 
 namespace Orienteering
 {
@@ -14,9 +13,9 @@ namespace Orienteering
 	public:
 		vector<City> cities;
 		vector<Road> roads;
-		double **incidency;
+		double** incidency;
 		bool check_cities();
-		//void draw();
+		void draw();
 		//Route solve_h();
 		bool check_roads();
 		bool check(double time);

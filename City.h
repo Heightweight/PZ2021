@@ -1,8 +1,5 @@
 #pragma once
 #include <string>
-
-using namespace std;
-
 namespace Orienteering
 {
 	class City
@@ -11,9 +8,10 @@ namespace Orienteering
 		int x;
 		int y;
 		int prize;
-		string c_name; 
+		std::string c_name; 
+		City(int x, int y, int prize, std::string name);
 		City();
-		City(int x, int y, int prize, string name);
 		bool operator==(City c);
+
 	};
 }

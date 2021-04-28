@@ -71,11 +71,11 @@ bool Map::check_roads()
 		{
 			return false;
 		}
-		if (count(cities.begin(), cities.end(), roads[i].start) == 0)
+		if (find(cities.begin(), cities.end(), roads[i].start) == cities.end())
 		{
 			return false;
 		}
-		if (count(cities.begin(), cities.end(), roads[i].end) == 0)
+		if (find(cities.begin(), cities.end(), roads[i].end) == cities.end())
 		{
 			return false;
 		}
