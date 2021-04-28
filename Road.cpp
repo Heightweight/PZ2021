@@ -12,3 +12,4 @@ Road::Road(City start, City end, double time)
 	this->time = time;
 
 }
+

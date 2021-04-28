@@ -18,12 +18,12 @@ void Route::append(City c)
 double Route::time(Map m)
 {
 	cities = this->cities;
-	for (i = 0; i < cities.size() - 1; i++)
+	double t = 0;
+	for (int i = 0; i < cities.size() - 1; i++)
 	{	
 		int posStart = -1;
 		int posEnd = -1;
-		double t = 0;
-		for (j = 0; j < m.cities.size(); j++)
+		for (int j = 0; j < m.cities.size(); j++)
 		{
 			if (m.cities[j] == cities[i])
 			{
@@ -35,15 +35,16 @@ double Route::time(Map m)
 			}
 		}
 		t = t + m.incidency[posStart][posEnd];
-		return t;
+		
 	}
+	return t;
 }
 
 int Route::profit()
 {
 	int p = 0;
 	
-	for (i = 0; i < cities.size(); i++)
+	for (int i = 0; i < cities.size(); i++)
 	{
 		p += cities[i].prize; 
 	}

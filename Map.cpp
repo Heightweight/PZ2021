@@ -11,7 +11,7 @@ using namespace std;
 
 bool Map::check_cities()
 {
-	for (i = 0; i < cities.size(); i++)
+	for (int i = 0; i < cities.size(); i++)
 	{
 		if (cities[i].prize < 0)
 			return false;
@@ -20,19 +20,19 @@ bool Map::check_cities()
 		if ((cities[i].y > 1000) || (cities[i].y < -1000))
 			return false;
 		
-		for (j = i + 1; j < cities.size(); j++)
+		for (int j = i + 1; j < cities.size(); j++)
 			if ((cities[i].x == cities[j].x) && (cities[i].y == cities[j].y))
 				return false;
 	}
 	return true;
 }
 
-int area(x1, y1, x2, y2, x3, y3)
+int area(int x1, int y1, int x2, int y2, int x3, int y3)
 {
 	return (x2 - x1) * (y3 - y1) - (y2 - y1) * (x3 - x1);
 }
 
-bool intersect1D(a1, b1, a2, b2)
+bool intersect1D(int a1, int b1, int a2, int b2)
 {
 	if (a1 > b1)
 	{
@@ -48,11 +48,11 @@ bool intersect1D(a1, b1, a2, b2)
 
 bool intersect(Road e1, Road e2)
 {
-	if ((e1.start == e2.start) || (e1.start = e2.end))
+	if ((e1.start == e2.start) || (e1.start == e2.end))
 	{
 		return false;
 	}
-	if ((e1.end == e2.start) || (e1.end = e2.end))
+	if ((e1.end == e2.start) || (e1.end == e2.end))
 	{
 		return false;
 	}
@@ -65,21 +65,21 @@ bool intersect(Road e1, Road e2)
 
 bool Map::check_roads()
 {
-	for (i = 0; i < roads.size(); i++)
+	for (int i = 0; i < roads.size(); i++)
 	{
 		if (roads[i].time <= 0)
 		{
 			return false;
 		}
-		if (find(cities.begin(), cities.end(), roads[i].start) == cities.end())
+		if (count(cities.begin(), cities.end(), roads[i].start) == 0)
 		{
 			return false;
 		}
-		if (find(cities.begin(), cities.end(), roads[i].end) == cities.end())
+		if (count(cities.begin(), cities.end(), roads[i].end) == 0)
 		{
 			return false;
 		}
-		for (j = i + 1l j < roads.size(); j++)
+		for (int j = i + 1; j < roads.size(); j++)
 		{
 			if (!(intersect(roads[i], roads[j])))
 			{

@@ -2,8 +2,10 @@
 #include "City.h"
 #include "Map.h"
 #include <vector>
+#include <string>
 
 using namespace std;
+
 namespace Orienteering
 {
 	class Route {
@@ -12,8 +14,8 @@ namespace Orienteering
 		void append(City c);
 		double time(Map m);
 		int profit();
-		Route(List<City> cities);
-		Route(string route_file);
+		//Route(vector<City> cities);
+		//Route(string route_file);
 	};
 }
 
