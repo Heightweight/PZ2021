@@ -13,14 +13,14 @@ namespace Orienteering
 	public:
 		vector<City> cities;
 		vector<Road> roads;
-		double** incidency;
+		double** adjacency;
 		bool check_cities();
-		void draw();
+		//void draw();
 		//Route solve_h();
 		bool check_roads();
 		bool check(double time);
 		//void show_solution(Route solution);
 		//Map(string city_file, string road_file);
-		//Map(vector<City> cities, vector<Road> roads);
+		Map(vector<City> cities, vector<Road> roads);
 	};
 }

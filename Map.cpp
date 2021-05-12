@@ -11,6 +11,44 @@
 using namespace Orienteering;
 using namespace std;
 
+int lookupCity(City c, vector<City> cities)
+{
+	for (int i = 0; i < cities.size(); i++)
+	{
+		if (cities[i] == c)
+			return i;
+	}
+	return -1;
+}
+
+Map::Map(vector<City> cities, vector<Road> roads)
+{
+	this->cities = cities;
+	this->roads = roads;
+	const int numVertices = cities.size();
+	this->adjacency = new double* [numVertices];
+	for (int i = 0; i < numVertices; i++) 
+	{
+		adjacency[i] = new double[numVertices];
+		for (int j = 0; j < numVertices; j++)
+		{
+			adjacency[i][j] = 0;
+		}
+
+	}
+	for (int i = 0; i < roads.size(); i++)
+	{	
+		Road r = roads[i];
+		int first = lookupCity(r.start, cities);
+		int last = lookupCity(r.end, cities);
+		adjacency[first][last] = r.time;
+		adjacency[last][first] = r.time;
+	}
+	
+
+}
+
+
 bool Map::check_cities()
 {
 	for (int i = 0; i < cities.size(); i++)
@@ -98,41 +136,6 @@ bool Map::check(double time)
 	return (time < 0) && (check_cities()) && (check_roads()) && (cities.size() > 0);
 }
 
-void Map::init(vector<City> cities, vector<Road> roads) {
-    this->cities = cities;
-    this->roads = roads;
-    // TODO fill incidency matrix.
-}
 
-Map::Map(string city_file, string road_file)
-{
-    fstream city_stram, road_stream;
 
-    city_stram.open(city_file, ios::in);
-	vector<City> cities_vec;
-	map<string, City> cities_map;
-	/// cut first line
-	vector<string> line = getNextLineAndSplitIntoTokens(std::istream& str);
-	while (!city_stram.eof()) {
-		vector<string> line = getNextLineAndSplitIntoTokens(std::istream& str);
-		City city(stoi(line[1]), stoi(line[2]), stoi(line[3]), line[0]);
-		cities_vec.push_back(city);
-		cities_map[line[0]] = city;
-	}
 
-	road_stream.open(road_file, ios::in);
-	vector<Road> roads;
-	/// cut first line
-	vector<string> line = getNextLineAndSplitIntoTokens(std::istream& str);
-	while (!road_stream.eof()) {
-		vector<string> line = getNextLineAndSplitIntoTokens(std::istream& str);
-		Road road(cities_map[line[1]], cities_map[line[2]], stod(line[3]));
-		roads.push_back(road)
-	}
-
-	init(cities_vec, roads)
-}
-
-Map(vector<City> cities, vector<Road> roads) {
-	init(cities, roads)
-}

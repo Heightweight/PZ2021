@@ -1,13 +1,7 @@
-﻿  City.cpp
-  Map.cpp
-C:\Users\heiwei\Documents\PZ2021\Map.cpp(14,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021\Map.cpp(23,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021\Map.cpp(68,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021\Map.cpp(82,25): warning C4018: '<': signed/unsigned mismatch
-  Road.cpp
-  Route.cpp
-C:\Users\heiwei\Documents\PZ2021\Route.cpp(22,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021\Route.cpp(26,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021\Route.cpp(47,20): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
+﻿  Map.cpp
+C:\Users\heiwei\Documents\PZ2021\Map.cpp(16,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\heiwei\Documents\PZ2021\Map.cpp(45,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\heiwei\Documents\PZ2021\Map.cpp(54,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\heiwei\Documents\PZ2021\Map.cpp(99,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\heiwei\Documents\PZ2021\Map.cpp(113,25): warning C4018: '<': signed/unsigned mismatch
   PZ2021PROJECT.vcxproj -> C:\Users\heiwei\Documents\PZ2021\PZ2021PROJECT\Debug\PZ2021PROJECT.lib

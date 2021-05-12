@@ -34,7 +34,7 @@ double Route::time(Map m)
 				posEnd = j;
 			}
 		}
-		t = t + m.incidency[posStart][posEnd];
+		t = t + m.adjacency[posStart][posEnd];
 		
 	}
 	return t;

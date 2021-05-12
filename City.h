@@ -9,8 +9,7 @@ namespace Orienteering
 		int y;
 		int prize;
 		std::string c_name; 
-		City(int x, int y, int prize, std::string name);
-		City();
+		City(int x=0, int y=0, int prize=-1, std::string name = "");
 		bool operator==(City c);
 
 	};
