@@ -5,7 +5,7 @@
 using namespace Orienteering;
 using namespace std;
 
-City::City(int x, int y, int prize, string name)
+City::City(double x, double y, int prize, string name)
 {
 	this->x = x;
 	this->y = y;
