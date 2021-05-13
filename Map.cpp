@@ -127,12 +127,12 @@ bool Map::check_cities()
 	return true;
 }
 
-int area(int x1, int y1, int x2, int y2, int x3, int y3)
+double area(double x1, double y1, double  x2, double y2, double  x3, double y3)
 {
 	return (x2 - x1) * (y3 - y1) - (y2 - y1) * (x3 - x1);
 }
 
-bool intersect1D(int a1, int b1, int a2, int b2)
+bool intersect1D(double a1, double b1, double a2, double b2)
 {
 	if (a1 > b1)
 	{
@@ -193,7 +193,7 @@ bool Map::check_roads()
 
 bool Map::check(double time)
 {
-	return (time < 0) && (check_cities()) && (check_roads()) && (cities.size() > 0);
+	return (time >= 0) && (check_cities()) && (check_roads()) && (cities.size() > 0);
 }
 
 Route Map::solve_e(double time)
