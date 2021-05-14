@@ -1,0 +1,29 @@
+﻿  UnitTest.cpp
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(20,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(31,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(54,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(114,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(123,25): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(159,9): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(159,26): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(160,9): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(160,24): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(161,9): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(161,26): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(162,9): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(162,24): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(168,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(182,25): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(207,12): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(212,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(280,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(313,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(317,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(323,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(339,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Route.cpp(36,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Route.cpp(40,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Route.cpp(53,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Route.cpp(86,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+     Trwa tworzenie biblioteki C:\Users\Kinga\Desktop\PZ2021\PZ2021\PZ2021PROJECT\Debug\UnitTest.lib i obiektu C:\Users\Kinga\Desktop\PZ2021\PZ2021\PZ2021PROJECT\Debug\UnitTest.exp
+  UnitTest.vcxproj -> C:\Users\Kinga\Desktop\PZ2021\PZ2021\PZ2021PROJECT\Debug\UnitTest.dll

@@ -13,7 +13,7 @@
 
 using namespace Orienteering;
 using namespace std;
-
+/*
 City lookupCityByName(string name, vector<City> cities)
 {
 	City c = City();
@@ -24,7 +24,7 @@ City lookupCityByName(string name, vector<City> cities)
 	}
 	return c; //returns a fab if no city was found 
 }
-
+*/
 void Route::append(City c)
 {
 	this->cities.push_back(c);
@@ -61,7 +61,7 @@ Route::Route(vector<City> cities)
 {
 	this->cities = cities;
 }
-
+/*
 Route::Route(string route_file, vector<City> cities)
 {
 	vector<City> city_init;
@@ -78,7 +78,7 @@ Route::Route(string route_file, vector<City> cities)
 	}
 	this->cities = city_init;
 }
-
+*/
 bool Route::operator==(Route& r)
 {
 	if (this->cities.size() != r.cities.size())
