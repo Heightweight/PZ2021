@@ -1,6 +1,16 @@
-﻿  Route.cpp
-C:\Users\Kinga\Desktop\PZ2021\PZ2021\Route.cpp(36,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\Kinga\Desktop\PZ2021\PZ2021\Route.cpp(40,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\Kinga\Desktop\PZ2021\PZ2021\Route.cpp(53,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\Kinga\Desktop\PZ2021\PZ2021\Route.cpp(86,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+﻿  Map.cpp
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(20,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(31,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(54,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(114,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(123,25): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(168,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(186,25): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(211,12): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(216,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(284,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(317,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(321,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(327,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(343,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
   PZ2021PROJECT.vcxproj -> C:\Users\Kinga\Desktop\PZ2021\PZ2021\PZ2021PROJECT\Debug\PZ2021PROJECT.lib

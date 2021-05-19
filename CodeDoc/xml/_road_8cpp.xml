@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_road_8cpp" kind="file" language="C++">
+    <compoundname>Road.cpp</compoundname>
+    <includes refid="_city_8h" local="yes">City.h</includes>
+    <includes local="no">string</includes>
+    <includes refid="_road_8h" local="yes">Road.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>Road.h</label>
+        <link refid="_road_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="2">
+        <label>City.h</label>
+        <link refid="_city_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>C:/Users/Kinga/Desktop/PZ2021/PZ2021/Road.cpp</label>
+        <link refid="_road_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Road.cpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;City.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Road.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">Orienteering;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><ref refid="class_orienteering_1_1_road_1a18361560b8f3cc60f77e4fecc210eeee" kindref="member">Road::Road</ref>(<ref refid="class_orienteering_1_1_city" kindref="compound">City</ref><sp/>start,<sp/><ref refid="class_orienteering_1_1_city" kindref="compound">City</ref><sp/>end,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>time)</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;start<sp/>=<sp/><ref refid="class_orienteering_1_1_road_1aad31e253b50e1a45532fa83466a23dba" kindref="member">start</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;end<sp/>=<sp/><ref refid="class_orienteering_1_1_road_1a03c8f788948da235ff3eed38cc27d4ca" kindref="member">end</ref>;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;time<sp/>=<sp/><ref refid="class_orienteering_1_1_road_1aa0d3e0bc38bf0a81a6b7790879a22ebe" kindref="member">time</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Road.cpp"/>
+  </compounddef>
+</doxygen>

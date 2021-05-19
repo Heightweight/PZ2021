@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_orienteering_1_1_map" kind="class" language="C++" prot="public">
+    <compoundname>Orienteering::Map</compoundname>
+    <includes refid="_map_8h" local="no">Map.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_orienteering_1_1_map_1a0682b8be374b4c33f3949859850db8e5" prot="public" static="no" mutable="no">
+        <type>vector&lt; <ref refid="class_orienteering_1_1_city" kindref="compound">City</ref> &gt;</type>
+        <definition>vector&lt;City&gt; Orienteering::Map::cities</definition>
+        <argsstring></argsstring>
+        <name>cities</name>
+        <briefdescription>
+<para>Vector which contains all cities on the map. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Map.h" line="23" column="8" bodyfile="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Map.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_orienteering_1_1_map_1af016e5ea86202db819564634c2939f3d" prot="public" static="no" mutable="no">
+        <type>vector&lt; <ref refid="class_orienteering_1_1_road" kindref="compound">Road</ref> &gt;</type>
+        <definition>vector&lt;Road&gt; Orienteering::Map::roads</definition>
+        <argsstring></argsstring>
+        <name>roads</name>
+        <briefdescription>
+<para>Vector which contains all roads on the map. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Map.h" line="27" column="8" bodyfile="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Map.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_orienteering_1_1_map_1aa643e1b8605593ff70aae58aba4f4036" prot="public" static="no" mutable="no">
+        <type>double **</type>
+        <definition>double** Orienteering::Map::adjacency</definition>
+        <argsstring></argsstring>
+        <name>adjacency</name>
+        <briefdescription>
+<para>Tabel which contains time of traveling between two cities. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If time=0 then road don&apos;t exist.</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Map.h" line="31" column="8" bodyfile="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Map.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_orienteering_1_1_map_1a39739a7e9be33d1e017248eb235e0774" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Map::check_cities</definition>
+        <argsstring>()</argsstring>
+        <name>check_cities</name>
+        <briefdescription>
+<para>Function check conditions: </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>amount of stock for city is nonnegative</para>
+</listitem><listitem><para>city coordinations are in range [-1000,1000]</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="return"><para>true if conditions are fufilled or false if not</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Map.h" line="38" column="6" bodyfile="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Map.cpp" bodystart="112" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="class_orienteering_1_1_map_1a3f47a80f4dc4b33516c60f11a216aa7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_orienteering_1_1_route" kindref="compound">Route</ref></type>
+        <definition>Route Map::solve_h</definition>
+        <argsstring>(double time)</argsstring>
+        <name>solve_h</name>
+        <param>
+          <type>double</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+<para>Heuristic solution of the problem. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>maximum work time of salesman</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>problem solution</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Map.h" line="46" column="7" bodyfile="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Map.cpp" bodystart="339" bodyend="364"/>
+      </memberdef>
+      <memberdef kind="function" id="class_orienteering_1_1_map_1a0bc708f3ebd3317629cee33eb86a4554" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_orienteering_1_1_route" kindref="compound">Route</ref></type>
+        <definition>Route Map::solve_e</definition>
+        <argsstring>(double time)</argsstring>
+        <name>solve_e</name>
+        <param>
+          <type>double</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+<para>Explicit solution of the problem. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>maximum work time of salesman</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>problem solution</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Map.h" line="52" column="7" bodyfile="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Map.cpp" bodystart="203" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="class_orienteering_1_1_map_1aee22b801665358907d78bc080239a4bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Map::check_roads</definition>
+        <argsstring>()</argsstring>
+        <name>check_roads</name>
+        <briefdescription>
+<para>Function check conditions: </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>road travel time is positive</para>
+</listitem><listitem><para>roads are not crossed</para>
+</listitem><listitem><para>between two cities exist maximum one road</para>
+</listitem><listitem><para>don&apos;t exist road between one city</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="return"><para>true if conditions are fufilled or false if not</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Map.h" line="61" column="6" bodyfile="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Map.cpp" bodystart="166" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="class_orienteering_1_1_map_1a06273780e231f35f32a2b90c6182f360" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Map::check</definition>
+        <argsstring>(double time)</argsstring>
+        <name>check</name>
+        <param>
+          <type>double</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+<para>Function check correctness of map </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if conditions are fufilled or false if not</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Map.h" line="67" column="6" bodyfile="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Map.cpp" bodystart="198" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="class_orienteering_1_1_map_1ad7342f52b0c656fc0d54814ec046704d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Map::Map</definition>
+        <argsstring>(string city_file, string road_file)</argsstring>
+        <name>Map</name>
+        <param>
+          <type>string</type>
+          <declname>city_file</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>road_file</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_orienteering_1_1_map" kindref="compound">Map</ref> constructor for files. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>city_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file with cities parameters</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>road_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file with roads parameters</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Map.h" line="75" column="1" bodyfile="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Map.cpp" bodystart="65" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="class_orienteering_1_1_map_1a339da017b46b012f33ae3077a0b2e238" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Map::Map</definition>
+        <argsstring>(vector&lt; City &gt; cities, vector&lt; Road &gt; roads)</argsstring>
+        <name>Map</name>
+        <param>
+          <type>vector&lt; <ref refid="class_orienteering_1_1_city" kindref="compound">City</ref> &gt;</type>
+          <declname>cities</declname>
+        </param>
+        <param>
+          <type>vector&lt; <ref refid="class_orienteering_1_1_road" kindref="compound">Road</ref> &gt;</type>
+          <declname>roads</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_orienteering_1_1_map" kindref="compound">Map</ref> constructor </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cities</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>city parameter</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>roads</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>road parameter</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Map.h" line="81" column="1" bodyfile="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Map.cpp" bodystart="39" bodyend="63"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Short describtion of <ref refid="class_orienteering_1_1_map" kindref="compound">Map</ref> class. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Class contains map with cities and roads from <ref refid="class_orienteering_1_1_city" kindref="compound">City</ref> class and <ref refid="class_orienteering_1_1_road" kindref="compound">Road</ref> class.</para>
+    </detaileddescription>
+    <location file="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Map.h" line="18" column="1" bodyfile="C:/Users/Kinga/Desktop/PZ2021/PZ2021/Map.h" bodystart="18" bodyend="82"/>
+    <listofallmembers>
+      <member refid="class_orienteering_1_1_map_1aa643e1b8605593ff70aae58aba4f4036" prot="public" virt="non-virtual"><scope>Orienteering::Map</scope><name>adjacency</name></member>
+      <member refid="class_orienteering_1_1_map_1a06273780e231f35f32a2b90c6182f360" prot="public" virt="non-virtual"><scope>Orienteering::Map</scope><name>check</name></member>
+      <member refid="class_orienteering_1_1_map_1a39739a7e9be33d1e017248eb235e0774" prot="public" virt="non-virtual"><scope>Orienteering::Map</scope><name>check_cities</name></member>
+      <member refid="class_orienteering_1_1_map_1aee22b801665358907d78bc080239a4bb" prot="public" virt="non-virtual"><scope>Orienteering::Map</scope><name>check_roads</name></member>
+      <member refid="class_orienteering_1_1_map_1a0682b8be374b4c33f3949859850db8e5" prot="public" virt="non-virtual"><scope>Orienteering::Map</scope><name>cities</name></member>
+      <member refid="class_orienteering_1_1_map_1ad7342f52b0c656fc0d54814ec046704d" prot="public" virt="non-virtual"><scope>Orienteering::Map</scope><name>Map</name></member>
+      <member refid="class_orienteering_1_1_map_1a339da017b46b012f33ae3077a0b2e238" prot="public" virt="non-virtual"><scope>Orienteering::Map</scope><name>Map</name></member>
+      <member refid="class_orienteering_1_1_map_1af016e5ea86202db819564634c2939f3d" prot="public" virt="non-virtual"><scope>Orienteering::Map</scope><name>roads</name></member>
+      <member refid="class_orienteering_1_1_map_1a0bc708f3ebd3317629cee33eb86a4554" prot="public" virt="non-virtual"><scope>Orienteering::Map</scope><name>solve_e</name></member>
+      <member refid="class_orienteering_1_1_map_1a3f47a80f4dc4b33516c60f11a216aa7d" prot="public" virt="non-virtual"><scope>Orienteering::Map</scope><name>solve_h</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

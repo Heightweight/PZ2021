@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_city_8cpp" kind="file" language="C++">
+    <compoundname>City.cpp</compoundname>
+    <includes refid="_city_8h" local="yes">City.h</includes>
+    <includes local="no">string</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="2">
+        <label>City.h</label>
+        <link refid="_city_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>C:/Users/Kinga/Desktop/PZ2021/PZ2021/City.cpp</label>
+        <link refid="_city_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacestd">std</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>City.cpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;City.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">Orienteering;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><ref refid="class_orienteering_1_1_city_1ae5f5eefc0b64c2333ae3174ab92473ab" kindref="member">City::City</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>prize,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>name)</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;x<sp/>=<sp/>x;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;y<sp/>=<sp/>y;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;prize<sp/>=<sp/>prize;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;c_name<sp/>=<sp/>name;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_orienteering_1_1_city_1a9cb623b7cc9dbae52f22d95089a70d51" kindref="member">City::operator==</ref>(<ref refid="class_orienteering_1_1_city" kindref="compound">City</ref><sp/>c)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(this-&gt;x<sp/>==<sp/>c.<ref refid="class_orienteering_1_1_city_1acd4dba2b5e58482b0983cfbe71e3b25d" kindref="member">x</ref>)<sp/>&amp;&amp;<sp/>(this-&gt;y<sp/>==<sp/>c.<ref refid="class_orienteering_1_1_city_1ae0464dc98a2b569e5a6ecc38be2f9a02" kindref="member">y</ref>)<sp/>&amp;&amp;<sp/>(this-&gt;prize<sp/>==<sp/>c.<ref refid="class_orienteering_1_1_city_1a7ad348d5771f7cf752f1c467e9db2f91" kindref="member">prize</ref>)<sp/>&amp;&amp;<sp/>(this-&gt;c_name<sp/>==<sp/>c.<ref refid="class_orienteering_1_1_city_1a334fc194b6f6fce65570847041bae898" kindref="member">c_name</ref>);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Kinga/Desktop/PZ2021/PZ2021/City.cpp"/>
+  </compounddef>
+</doxygen>

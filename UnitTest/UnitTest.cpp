@@ -87,8 +87,18 @@ namespace UnitTest
 			Map map(cities, roads);
 			Assert::AreEqual(false, map.check(30));
 		}
-		// Dodaæ metodê sprawdzaj¹c¹:
-		// -Ujemnoœæ produktów city.prize<0
+		TEST_METHOD(PrizeLessThanZero)
+		{
+			City L(0, 0, 10, "London");
+			City M(4, 5, 25, "Manchester");
+			City B(2, 2, -18, "Birmingham");
+			Road r1(L, B, 8);
+			Road r2(B, M, 5);
+			vector<City> cities = { M,L,B };
+			vector<Road> roads = { r1,r2 };
+			Map map(cities, roads);
+			Assert::AreEqual(false, map.check(25));
+		}
 		TEST_METHOD(RoadTimeZero)
 		{
 			City L(0, 0, 10, "London");
@@ -98,6 +108,15 @@ namespace UnitTest
 			Road r2(B, M, 5);
 			vector<City> cities = { M,L,B };
 			vector<Road> roads = { r1,r2 };
+			Map map(cities, roads);
+			Assert::AreEqual(false, map.check(25));
+		}
+		TEST_METHOD(RoadBeatweenSameCity) 
+		{
+			City L(3.5, 4, 20, "Leicester");
+			Road r(L, L, 5);
+			vector<City> cities = { L };
+			vector<Road> roads = { r };
 			Map map(cities, roads);
 			Assert::AreEqual(false, map.check(25));
 		}

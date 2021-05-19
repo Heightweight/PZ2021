@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.1" xml:lang="en-US">
+  <compound refid="class_orienteering_1_1_city" kind="class"><name>Orienteering::City</name>
+    <member refid="class_orienteering_1_1_city_1acd4dba2b5e58482b0983cfbe71e3b25d" kind="variable"><name>x</name></member>
+    <member refid="class_orienteering_1_1_city_1ae0464dc98a2b569e5a6ecc38be2f9a02" kind="variable"><name>y</name></member>
+    <member refid="class_orienteering_1_1_city_1a7ad348d5771f7cf752f1c467e9db2f91" kind="variable"><name>prize</name></member>
+    <member refid="class_orienteering_1_1_city_1a334fc194b6f6fce65570847041bae898" kind="variable"><name>c_name</name></member>
+    <member refid="class_orienteering_1_1_city_1ae5f5eefc0b64c2333ae3174ab92473ab" kind="function"><name>City</name></member>
+    <member refid="class_orienteering_1_1_city_1a9cb623b7cc9dbae52f22d95089a70d51" kind="function"><name>operator==</name></member>
+  </compound>
+  <compound refid="class_orienteering_1_1_map" kind="class"><name>Orienteering::Map</name>
+    <member refid="class_orienteering_1_1_map_1a0682b8be374b4c33f3949859850db8e5" kind="variable"><name>cities</name></member>
+    <member refid="class_orienteering_1_1_map_1af016e5ea86202db819564634c2939f3d" kind="variable"><name>roads</name></member>
+    <member refid="class_orienteering_1_1_map_1aa643e1b8605593ff70aae58aba4f4036" kind="variable"><name>adjacency</name></member>
+    <member refid="class_orienteering_1_1_map_1a39739a7e9be33d1e017248eb235e0774" kind="function"><name>check_cities</name></member>
+    <member refid="class_orienteering_1_1_map_1a3f47a80f4dc4b33516c60f11a216aa7d" kind="function"><name>solve_h</name></member>
+    <member refid="class_orienteering_1_1_map_1a0bc708f3ebd3317629cee33eb86a4554" kind="function"><name>solve_e</name></member>
+    <member refid="class_orienteering_1_1_map_1aee22b801665358907d78bc080239a4bb" kind="function"><name>check_roads</name></member>
+    <member refid="class_orienteering_1_1_map_1a06273780e231f35f32a2b90c6182f360" kind="function"><name>check</name></member>
+    <member refid="class_orienteering_1_1_map_1ad7342f52b0c656fc0d54814ec046704d" kind="function"><name>Map</name></member>
+    <member refid="class_orienteering_1_1_map_1a339da017b46b012f33ae3077a0b2e238" kind="function"><name>Map</name></member>
+  </compound>
+  <compound refid="class_orienteering_1_1_road" kind="class"><name>Orienteering::Road</name>
+    <member refid="class_orienteering_1_1_road_1aad31e253b50e1a45532fa83466a23dba" kind="variable"><name>start</name></member>
+    <member refid="class_orienteering_1_1_road_1a03c8f788948da235ff3eed38cc27d4ca" kind="variable"><name>end</name></member>
+    <member refid="class_orienteering_1_1_road_1aa0d3e0bc38bf0a81a6b7790879a22ebe" kind="variable"><name>time</name></member>
+    <member refid="class_orienteering_1_1_road_1a18361560b8f3cc60f77e4fecc210eeee" kind="function"><name>Road</name></member>
+  </compound>
+  <compound refid="class_orienteering_1_1_route" kind="class"><name>Orienteering::Route</name>
+    <member refid="class_orienteering_1_1_route_1acdd32d9ac2f1204ad206c2596cfabf38" kind="variable"><name>cities</name></member>
+    <member refid="class_orienteering_1_1_route_1a9344c9071de83a0451a4a76eec33f5aa" kind="function"><name>append</name></member>
+    <member refid="class_orienteering_1_1_route_1a7799098f570ef1b59cd7536211ef2163" kind="function"><name>time</name></member>
+    <member refid="class_orienteering_1_1_route_1ab8a5b5c97b4f05afca0967b6c321e75b" kind="function"><name>profit</name></member>
+    <member refid="class_orienteering_1_1_route_1a995bcd4bfe6ef3f83df1aa1d8a26e36b" kind="function"><name>Route</name></member>
+    <member refid="class_orienteering_1_1_route_1a2d322e8bbf9e026001c3383e96e8c15e" kind="function"><name>Route</name></member>
+    <member refid="class_orienteering_1_1_route_1a3a7ad7a1a00ce337d93ccbcc1618380d" kind="function"><name>operator==</name></member>
+  </compound>
+  <compound refid="namespace_orienteering" kind="namespace"><name>Orienteering</name>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="_city_8cpp" kind="file"><name>City.cpp</name>
+  </compound>
+  <compound refid="_city_8h" kind="file"><name>City.h</name>
+  </compound>
+  <compound refid="helper_8cpp" kind="file"><name>helper.cpp</name>
+    <member refid="helper_8cpp_1ad4d6f502427c50aec468e7bba6aa2c70" kind="function"><name>getNextLineAndSplitIntoTokens</name></member>
+  </compound>
+  <compound refid="helper_8h" kind="file"><name>helper.h</name>
+    <member refid="helper_8h_1ad4d6f502427c50aec468e7bba6aa2c70" kind="function"><name>getNextLineAndSplitIntoTokens</name></member>
+  </compound>
+  <compound refid="_map_8cpp" kind="file"><name>Map.cpp</name>
+    <member refid="_map_8cpp_1a2a0694d7f39b139f380488cac4c59984" kind="function"><name>lookupCity</name></member>
+    <member refid="_map_8cpp_1ad7fc48cc3ef6f08ca57d1d5ff92ef045" kind="function"><name>lookupCityByName</name></member>
+    <member refid="_map_8cpp_1adf61cf300035374ce1f42d5c6917515c" kind="function"><name>area</name></member>
+    <member refid="_map_8cpp_1a54c2d37145d29fa958f391ad4d69e169" kind="function"><name>intersect1D</name></member>
+    <member refid="_map_8cpp_1aaa63801cde0c4686a9f074de807cc5ac" kind="function"><name>intersect</name></member>
+    <member refid="_map_8cpp_1a8e9a33659a204019c45ec90a4c028898" kind="function"><name>weight</name></member>
+    <member refid="_map_8cpp_1ad9bbed6bd14a27a39396e69bbb9a65d8" kind="function"><name>delta</name></member>
+    <member refid="_map_8cpp_1a14ad63ba988d02dd36e20cf202c3a37e" kind="function"><name>next_r</name></member>
+  </compound>
+  <compound refid="_map_8h" kind="file"><name>Map.h</name>
+  </compound>
+  <compound refid="_road_8cpp" kind="file"><name>Road.cpp</name>
+  </compound>
+  <compound refid="_road_8h" kind="file"><name>Road.h</name>
+  </compound>
+  <compound refid="_route_8cpp" kind="file"><name>Route.cpp</name>
+  </compound>
+  <compound refid="_route_8h" kind="file"><name>Route.h</name>
+  </compound>
+</doxygenindex>

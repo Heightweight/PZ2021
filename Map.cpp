@@ -156,10 +156,10 @@ bool intersect(Road e1, Road e2)
 	{
 		return false;
 	}
-	int x1 = e1.start.x, y1 =  e1.start.y;
-	int x2 = e1.end.x, y2 = e1.end.y;
-	int x3 = e2.start.x, y3 =  e2.start.y;
-	int x4 = e2.end.x, y4 = e2.end.y;
+	double x1 = e1.start.x, y1 =  e1.start.y;
+	double x2 = e1.end.x, y2 = e1.end.y;
+	double x3 = e2.start.x, y3 =  e2.start.y;
+	double x4 = e2.end.x, y4 = e2.end.y;
 	return intersect1D(x1, x2, x3, x4) && intersect1D(y1, y2, y3, y4) && (area(x1, y1, x2, y2, x3, y3) * area(x1, y1, x2, y2, x4, y4) <= 0) && (area(x3, y3, x4, y4, x1, y1) * area(x3, y3, x4, y4, x2, y2) <= 0);
 }
 
@@ -167,6 +167,10 @@ bool Map::check_roads()
 {
 	for (int i = 0; i < roads.size(); i++)
 	{
+		if (roads[i].start == roads[i].end)
+		{
+			return false;
+		}
 		if (roads[i].time <= 0)
 		{
 			return false;
