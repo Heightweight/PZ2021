@@ -47,10 +47,15 @@ double Route::time(vector<Road> roadsPassed)
 int Route::profit()
 {
 	int p = 0;
-	
+	vector<City> visited;
 	for (int i = 0; i < cities.size(); i++)
 	{
-		p += cities[i].prize; 
+		if (find(visited.begin(), visited.end(), cities[i]) == visited.end())
+		{
+			p += cities[i].prize;
+			visited.push_back(cities[i]);
+		}
+		
 	}
 	return p;
 }
