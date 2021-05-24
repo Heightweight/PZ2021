@@ -3,7 +3,6 @@
 #include "City.h"
 #include "Map.h"
 #include "Road.h"
-#include "helper.h"
 #include <string>
 #include <vector>
 #include <map>
@@ -127,7 +126,7 @@ bool Map::check_cities()
 	return true;
 }
 
-double area(double x1, double y1, double  x2, double y2, double  x3, double y3)
+double area(double x1, double y1, double x2, double y2, double  x3, double y3)
 {
 	return (x2 - x1) * (y3 - y1) - (y2 - y1) * (x3 - x1);
 }
@@ -148,6 +147,14 @@ bool intersect1D(double a1, double b1, double a2, double b2)
 
 bool intersect(Road e1, Road e2)
 {
+	if ((e1.start == e2.start) && (e1.end == e2.end))
+	{
+		return true;
+	}
+	if ((e1.start == e2.end) && (e1.end == e2.start))
+	{
+		return true;
+	}
 	if ((e1.start == e2.start) || (e1.start == e2.end))
 	{
 		return false;
@@ -185,7 +192,7 @@ bool Map::check_roads()
 		}
 		for (int j = i + 1; j < roads.size(); j++)
 		{
-			if (!(intersect(roads[i], roads[j])))
+			if (intersect(roads[i], roads[j]))
 			{
 				return false; 
 			}

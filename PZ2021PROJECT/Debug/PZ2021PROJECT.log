@@ -1,16 +1,25 @@
-﻿  Map.cpp
-C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(20,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(31,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(54,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(114,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(123,25): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(168,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(186,25): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(211,12): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
-C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(216,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(284,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(317,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(321,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(327,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\Kinga\Desktop\PZ2021\PZ2021\Map.cpp(343,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-  PZ2021PROJECT.vcxproj -> C:\Users\Kinga\Desktop\PZ2021\PZ2021\PZ2021PROJECT\Debug\PZ2021PROJECT.lib
+﻿  City.cpp
+  Map.cpp
+C:\Users\heiwei\Documents\PZ2021\Map.cpp(19,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\heiwei\Documents\PZ2021\Map.cpp(30,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\heiwei\Documents\PZ2021\Map.cpp(53,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\heiwei\Documents\PZ2021\Map.cpp(113,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\heiwei\Documents\PZ2021\Map.cpp(122,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\heiwei\Documents\PZ2021\Map.cpp(175,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\heiwei\Documents\PZ2021\Map.cpp(193,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\heiwei\Documents\PZ2021\Map.cpp(218,12): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\heiwei\Documents\PZ2021\Map.cpp(223,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\heiwei\Documents\PZ2021\Map.cpp(291,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\heiwei\Documents\PZ2021\Map.cpp(324,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\heiwei\Documents\PZ2021\Map.cpp(328,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\heiwei\Documents\PZ2021\Map.cpp(334,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\heiwei\Documents\PZ2021\Map.cpp(350,20): warning C4018: '<': signed/unsigned mismatch
+  Road.cpp
+  Route.cpp
+C:\Users\heiwei\Documents\PZ2021\Route.cpp(18,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\heiwei\Documents\PZ2021\Route.cpp(34,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\heiwei\Documents\PZ2021\Route.cpp(38,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\heiwei\Documents\PZ2021\Route.cpp(51,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\heiwei\Documents\PZ2021\Route.cpp(84,20): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  PZ2021PROJECT.vcxproj -> C:\Users\heiwei\Documents\PZ2021\PZ2021PROJECT\Debug\PZ2021PROJECT.lib

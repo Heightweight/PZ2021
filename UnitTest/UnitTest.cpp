@@ -18,6 +18,17 @@ namespace UnitTest
 	{
 	public:
 
+
+		TEST_METHOD(Intersect2D)
+		{
+			City L(0, 0, 10, "London");
+			City M(5, 5, 25, "Manchester");
+			City B(5, 0, 18, "Birmingham");
+			City N(0, 5, 10, "Newcastle");
+			Road r1(L, M, 7);
+			Road r2(B, N, 5);
+			Assert::AreEqual(true, intersect(r1, r2));
+		}
 		TEST_METHOD(RoadTimeLessThan0)
 		{
 			City L(0, 0, 10, "London");
@@ -37,10 +48,10 @@ namespace UnitTest
 			City B(2, 2, 18, "Birmingham");
 			Road r1(L, M, 7);
 			Road r2(M, L, 5);
-			vector<City> cities = { M,L,B };
-			vector<Road> roads = { r1,r2 };
+			vector<City> cities{ M,L,B };
+			vector<Road> roads{ r1,r2 };
 			Map map(cities, roads);
-			Assert::AreEqual(false, map.check(13));
+			Assert::AreEqual(false, map.check(20));
 		}
 		TEST_METHOD(EmptyMap)
 		{
@@ -57,8 +68,8 @@ namespace UnitTest
 			City N(0, 5, 10, "Newcastle");
 			Road r1(L, M, 7);
 			Road r2(B, N, 5);
-			vector<City> cities = { M,L,B };
-			vector<Road> roads = { r1,r2 };
+			vector<City> cities{ M,L,B,N };
+			vector<Road> roads{ r1,r2 };
 			Map map(cities, roads);
 			Assert::AreEqual(false, map.check(20));
 		}
@@ -82,8 +93,8 @@ namespace UnitTest
 			City S(2, 1, 5, "Sheffield");
 			Road r1(L, B, 7);
 			Road r2(B, M, 5);
-			vector<City> cities = { M,L,B };
-			vector<Road> roads = { r1,r2 };
+			vector<City> cities{M, L, B, S};
+			vector<Road> roads{r1, r2};
 			Map map(cities, roads);
 			Assert::AreEqual(false, map.check(30));
 		}

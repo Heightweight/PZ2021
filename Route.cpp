@@ -1,8 +1,6 @@
 // Route.cpp
-
 #include "Route.h"
 #include "City.h"
-#include "Map.h"
 #include "Road.h"
 #include <string>
 #include <vector>
@@ -13,8 +11,8 @@
 
 using namespace Orienteering;
 using namespace std;
-/*
-City lookupCityByName(string name, vector<City> cities)
+
+City lookupCityRByName(string name, vector<City> cities)
 {
 	City c = City();
 	for (int i = 0; i < cities.size(); i++)
@@ -24,7 +22,7 @@ City lookupCityByName(string name, vector<City> cities)
 	}
 	return c; //returns a fab if no city was found 
 }
-*/
+
 void Route::append(City c)
 {
 	this->cities.push_back(c);
@@ -61,7 +59,7 @@ Route::Route(vector<City> cities)
 {
 	this->cities = cities;
 }
-/*
+
 Route::Route(string route_file, vector<City> cities)
 {
 	vector<City> city_init;
@@ -71,14 +69,14 @@ Route::Route(string route_file, vector<City> cities)
 	while (getline(routeStream, read))
 	{
 		stringstream str(read);
-		string name;
-		getline(str, name);
-		City nextInQueue = lookupCityByName(name, cities);
+		string nm;
+		getline(str, nm);
+		City nextInQueue = lookupCityRByName(nm, cities);
 		city_init.push_back(nextInQueue);
 	}
 	this->cities = city_init;
 }
-*/
+
 bool Route::operator==(Route& r)
 {
 	if (this->cities.size() != r.cities.size())
