@@ -10,6 +10,8 @@
 #include <string.h>
 #include <fstream>
 #include <sstream>
+#include <map>
+
 
 using namespace Orienteering;
 using namespace std;
@@ -58,7 +60,10 @@ Map::Map(vector<City> cities, vector<Road> roads)
 		adjacency[first][last] = r.time;
 		adjacency[last][first] = r.time;
 	}
-	
+	for (int i = 0; i < cities.size(); i++)
+	{
+		indexName[cities[i].c_name] = i;
+	}
 }
 
 Map::Map(string city_file, string road_file)
@@ -147,6 +152,13 @@ bool intersect1D(double a1, double b1, double a2, double b2)
 
 bool intersect(Road e1, Road e2)
 {
+	if ((e1.start == e2.end) && (e1.end == e2.start))
+	{
+		if (e1.time == e2.time)
+			return false;
+		else
+			return true;
+	}
 	if ((e1.start == e2.start) && (e1.end == e2.end))
 	{
 		return true;
@@ -178,18 +190,22 @@ bool Map::check_roads()
 		{
 			return false;
 		}
+		
 		if (roads[i].time <= 0)
 		{
 			return false;
 		}
+		
 		if (find(cities.begin(), cities.end(), roads[i].start) == cities.end())
 		{
 			return false;
 		}
+		
 		if (find(cities.begin(), cities.end(), roads[i].end) == cities.end())
 		{
 			return false;
 		}
+		
 		for (int j = i + 1; j < roads.size(); j++)
 		{
 			if (intersect(roads[i], roads[j]))
@@ -209,45 +225,46 @@ bool Map::check(double time)
 
 Route Map::solve_e(double time)
 {
-	Route emptyRoute = Route(vector<City>()); //empty route with no cities
-	vector<Route> r_old;
-	r_old.push_back(emptyRoute);
-	vector<Route> r_new;
-	Route max_route = emptyRoute;
-	int max_profit = -1;
-	int t_max = time;
-	int length = this->cities.size();
-	vector<City> cities = this->cities;
-	while (r_old.size() != 0)
-	{
-		for (int i = 0; i < r_old.size(); i++)
-		{
-			for (int j = 0; j < length; j++)
-			{
-				Route toModify = r_old[i];
-				City end = toModify.cities.back();
-				City toAppend = cities[j];
-				int numberEnd = lookupCity(end, cities);
-				int numberToAppend = lookupCity(toAppend, cities);
-				if (adjacency[numberToAppend][numberEnd] > 0 && toModify.time(this->roads) + this->adjacency[numberToAppend][numberEnd] <= time)
-				{
-					toModify.append(toAppend);
-					r_old.push_back(toModify);
-					if (toModify.profit() > max_profit)
-					{
-						max_profit = toModify.profit();
-						max_route = toModify;
-					}
-				}
-					
-			}
-		}
-		r_old = r_new;
-		r_new.clear();
-
-	}
-	return max_route;
 	
+
+		Route emptyRoute = Route(vector<City>()); //empty route with no cities
+		vector<Route> r_old;
+		r_old.push_back(emptyRoute);
+		vector<Route> r_new;
+		Route max_route = emptyRoute;
+		int max_profit = -1;
+		int t_max = time;
+		int length = this->cities.size();
+		vector<City> cities = this->cities;
+		while (r_old.size() != 0)
+		{
+			for (int i = 0; i < r_old.size(); i++)
+			{
+				for (int j = 0; j < length; j++)
+				{
+					Route toModify = r_old[i];
+					City end = toModify.cities.back();
+					City toAppend = cities[j];
+					int numberEnd = lookupCity(end, cities);
+					int numberToAppend = lookupCity(toAppend, cities);
+					if (adjacency[numberToAppend][numberEnd] > 0 && toModify.time(this->roads) + this->adjacency[numberToAppend][numberEnd] <= time)
+					{
+						toModify.append(toAppend);
+						r_old.push_back(toModify);
+						if (toModify.profit() > max_profit)
+						{
+							max_profit = toModify.profit();
+							max_route = toModify;
+						}
+					}
+
+				}
+			}
+			r_old = r_new;
+			r_new.clear();
+
+		}
+		return max_route;
 }
 
 double weight(int j, int i, Map* m)
@@ -263,28 +280,32 @@ double weight(int j, int i, Map* m)
 
 vector<int> delta(int cityNumber, Route route, Map* m, double time)
 {
-	vector<int> delta;
-	int length = m->cities.size();
-	for (int i = 0; i < length; i++)
+	vector<int> delta; //empty init
+	int length = m->cities.size(); //length = amount of cities on the map
+	for (int i = 0; i < length; i++) //cycling through all cities
 	{
 		if (m->adjacency[cityNumber][i] > 0 && route.time(m->roads)+m->adjacency[cityNumber][i]<time)
 			delta.push_back(i);
 	}
-	return delta;
+	return delta; //returns all acceptable adjacent cities to cityNumber
 
 }
 
 Route next_r(Map* m, Route r, double time)
 {
-	if (delta(lookupCity(r.cities.back(), m->cities), r, m, time) == vector<int>())
+	vector<int> city_delta = delta(lookupCity(r.cities.back(), m->cities), r, m, time);
+
+	if (city_delta.size() == 0)
 	{
 		return r;
 	}
 	else
 	{
-		vector<int> city_delta = delta(lookupCity(r.cities.back(), m->cities), r, m, time);
+		int randomized = 0;
+		
 		int n = city_delta.size();
 		vector<double> weights;
+		
 		for (int i = 0; i < n; i++)
 		{
 			double w = weight(lookupCity(r.cities.back(), m->cities), city_delta[i], m);
@@ -312,7 +333,7 @@ Route next_r(Map* m, Route r, double time)
 				}
 			}
 		} //sorting weights and delta simultaniously 
-
+		
 		vector<double> max_3(weights.begin(), weights.begin() + min(3, (int)weights.size()));
 		double sum = 0;
 		for (vector<double>::iterator it = max_3.begin(); it != max_3.end(); ++it)
@@ -328,16 +349,21 @@ Route next_r(Map* m, Route r, double time)
 			for (int i = 0; i < max_3.size(); i++)
 				max_3[i] = (1 / max_3.size());
 
-		int randomized;
+		
 		double probability = ((rand() % 100) + 1) / 100;
 		double accum = 0;
 		for (int i = 0; i < max_3.size(); i++)
 		{
-			if (probability > accum && probability <= max_3[i])
+			if (probability > accum && probability <= accum + max_3[i])
 				randomized = i;
 			accum += max_3[i];
 		}
-		r.append(m->cities[city_delta[randomized]]);
+		Route copy = r;
+		copy.append(m->cities[city_delta[randomized]]);
+		if (copy.time(m->roads) <= time)
+		{
+			r.append(m->cities[city_delta[randomized]]);
+		}
 		return r;
 
 	}
@@ -349,10 +375,10 @@ Route Map::solve_h(double time)
 	int max_profit = -1;
 	for (int i = 0; i < cities.size(); i++)
 	{
-		Route newRoute = Route(vector<City>());
-		for (int j = 0; j < 3000; j++)
+		for (int j = 0; j < 1; j++)
 		{
-			Route r_old = newRoute;
+			Route newRoute = Route(vector<City>());
+			Route r_old = newRoute;		
 			newRoute.append(this->cities[i]);
 			Route r_new = newRoute;
 			while (!(r_new == r_old))

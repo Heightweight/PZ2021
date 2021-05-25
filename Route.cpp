@@ -31,14 +31,17 @@ void Route::append(City c)
 double Route::time(vector<Road> roadsPassed)
 {
 	double t = 0;
-	for (int i = 0; i < cities.size() - 1; i++)
+	for (int i = 0; i < (int)cities.size() - 1; i++)
 	{
 		City start = cities[i];
 		City end = cities[i + 1];
 		for (int j = 0; j < roadsPassed.size(); j++)
 		{
 			if ((roadsPassed[j].start == start && roadsPassed[j].end == end) || (roadsPassed[j].start == end && roadsPassed[j].end == start))
+			{
 				t += roadsPassed[j].time;
+				break;
+			}
 		}
 	}
 	return t;

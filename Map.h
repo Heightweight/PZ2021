@@ -4,6 +4,7 @@
 #include "Route.h"
 #include <vector>
 #include <string>
+#include <map>
 
 using namespace std;
 using namespace Orienteering;
@@ -79,5 +80,6 @@ namespace Orienteering
 		/// <param name="cities">city parameter</param>
 		/// <param name="roads">road parameter</param>
 		Map(vector<City> cities, vector<Road> roads);
+		map<string, int> indexName;
 	};
 }
