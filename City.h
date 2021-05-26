@@ -44,7 +44,6 @@ namespace Orienteering
 		/// <summary>
 		/// number of this city in a context of a map.
 		/// </summary>
-		
 		int nubmerAssigned;
 
 	};

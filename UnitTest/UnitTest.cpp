@@ -20,39 +20,21 @@ namespace UnitTest
 		
 		TEST_METHOD(solveHeuristic)
 		{
-			string cities = "C:\\Users\\heiwei\\Documents\\PZ2021\\plikicsv\\cities1.csv";
-			string roads = "C:\\Users\\heiwei\\Documents\\PZ2021\\plikicsv\\roads1.csv";
-			//string cities = "C:\\Users\\Kinga\\Desktop\\MiNI_PZ2021\\PZ2021\\plikicsv\\cities0.csv";
-			//string roads = "C:\\Users\\Kinga\\Desktop\\MiNI_PZ2021\\PZ2021\\plikicsv\\roads0.csv";
+			//string cities = "C:\\Users\\heiwei\\Documents\\PZ2021\\plikicsv\\cities1.csv";
+			//string roads = "C:\\Users\\heiwei\\Documents\\PZ2021\\plikicsv\\roads1.csv";
+			string cities = "C:\\Users\\Kinga\\Desktop\\MiNI_PZ2021\\PZ2021\\plikicsv\\cities0.csv";
+			string roads = "C:\\Users\\Kinga\\Desktop\\MiNI_PZ2021\\PZ2021\\plikicsv\\roads0.csv";
 			Map m(cities, roads); 
 			vector<City> c;
-			/*Route empt = Route(c);
-			empt.append(m.cities[0]);
-			Assert::IsTrue(next_r(&m, empt, 70.0).cities.size() == 2);
-			Route new_r = (next_r(&m, empt, 70.0));
-			Assert::IsTrue(next_r(&m, new_r, 70.0).cities.size() == 3);
-			Route new_r2 = next_r(&m, new_r, 70.0);
-			Assert::IsTrue(next_r(&m, new_r2, 70.0).cities.size() == 4);*/
+			//Route empt = Route(c);
+			//empt.append(m.cities[0]);
+			//Assert::IsTrue(next_r(&m, empt, 70.0).cities.size() == 2);
+			//Route new_r = (next_r(&m, empt, 70.0));
+			//Assert::IsTrue(next_r(&m, new_r, 70.0).cities.size() == 3);
+			//Route new_r2 = next_r(&m, new_r, 70.0);
+			//Assert::IsTrue(next_r(&m, new_r2, 70.0).cities.size() == 4);
 			double t = 70;
 			Assert::IsTrue(m.solve_h(t).time(m.adjacency) <= 70);
-		}
-
-		TEST_METHOD(RouteTime)
-		{
-			City L(0, 0, 1, "London");
-			City M(0, 5, 4, "Manchester");
-			City B(5, 0, 3, "Birmingham");
-			City N(0, -5, 2, "Newcastle");
-			Road r1(M, L, 1);
-			Road r2(L, B, 2);
-			Road r3(B, L, 2);
-			Road r4(L, N, 3);
-			vector<City> route = { M,L,B,L,N };
-			vector<Road> roadsPassed = { r1,r2,r3,r4 };
-			vector<City> c;
-			Route empt = Route(c);
-			//Assert::AreEqual(8.0, Route(route).time(roadsPassed));
-			
 		}
 
 		TEST_METHOD(readFromFile)
@@ -207,10 +189,11 @@ namespace UnitTest
 			Road r2(L, B, 2);
 			Road r3(B, L, 2);
 			Road r4(L, N, 3);
-			vector<City> route = { M,L,B,L,N };
+
 			vector<Road> roadsPassed = { r1,r2,r3,r4 };
 			vector<City> cities = { L, M, B, N };
 			Map m = Map(cities, roadsPassed);
+			vector<City> route = { m.cities[1],m.cities[0],m.cities[2],m.cities[0],m.cities[3] };
 			Assert::AreEqual(8.0, Route(route).time(m.adjacency));
 		}
 		TEST_METHOD(LookUpCitiesMap)

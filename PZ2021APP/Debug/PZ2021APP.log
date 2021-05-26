@@ -1,28 +1,28 @@
 ﻿  PZ2021APP.cpp
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\Map.cpp(21,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\Map.cpp(32,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\Map.cpp(58,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\Map.cpp(67,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\Map.cpp(127,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\Map.cpp(136,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\Map.cpp(196,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\Map.cpp(218,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\Map.cpp(245,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\Map.cpp(250,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\Map.cpp(314,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\Map.cpp(345,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\Map.cpp(349,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\Map.cpp(356,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\Map.cpp(383,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\Route.cpp(18,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\Route.cpp(47,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\Route.cpp(85,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\PZ2021APP\PZ2021APP.cpp(114,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\PZ2021APP\PZ2021APP.cpp(120,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\PZ2021APP\PZ2021APP.cpp(181,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\PZ2021APP\PZ2021APP.cpp(191,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\PZ2021APP\PZ2021APP.cpp(203,31): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\PZ2021APP\PZ2021APP.cpp(227,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\PZ2021APP\PZ2021APP.cpp(403,43): warning C4018: '<': signed/unsigned mismatch
-C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\PZ2021APP\PZ2021APP.cpp(412,43): warning C4018: '<': signed/unsigned mismatch
-  PZ2021APP.vcxproj -> C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\PZ2021APP\Debug\PZ2021APP.exe
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Map.cpp(21,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Map.cpp(32,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Map.cpp(58,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Map.cpp(67,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Map.cpp(127,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Map.cpp(136,25): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Map.cpp(196,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Map.cpp(218,25): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Map.cpp(245,13): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Map.cpp(250,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Map.cpp(314,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Map.cpp(345,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Map.cpp(349,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Map.cpp(356,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Map.cpp(383,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Route.cpp(18,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Route.cpp(47,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Route.cpp(85,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\PZ2021APP\PZ2021APP.cpp(115,27): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\PZ2021APP\PZ2021APP.cpp(121,27): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\PZ2021APP\PZ2021APP.cpp(182,27): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\PZ2021APP\PZ2021APP.cpp(192,27): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\PZ2021APP\PZ2021APP.cpp(204,31): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\PZ2021APP\PZ2021APP.cpp(228,27): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\PZ2021APP\PZ2021APP.cpp(409,43): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\PZ2021APP\PZ2021APP.cpp(418,43): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  PZ2021APP.vcxproj -> C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\PZ2021APP\Debug\PZ2021APP.exe

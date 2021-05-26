@@ -18,6 +18,10 @@ namespace Orienteering
 		/// Vector which contains route of salesman.
 		/// </summary>
 		vector<City> cities;
+		/// <summary>
+		/// Add city to city vector
+		/// </summary>
+		/// <param name="c">added city</param>
 		inline void append(City &c);
 		/// <summary>
 		/// Function of route time
@@ -41,7 +45,15 @@ namespace Orienteering
 		/// <param name="route_file">file with route</param>
 		/// <param name="cities">cities vector</param>
 		Route(string route_file, vector<City> cities);
+		/// <summary>
+		/// 
+		/// </summary>
 		double timeCurrent;
+		/// <summary>
+		/// Operator == for Route class
+		/// </summary>
+		/// <param name="c">route</param>
+		/// <returns></returns>
 		bool operator==(Route& c);
 	};
 }
