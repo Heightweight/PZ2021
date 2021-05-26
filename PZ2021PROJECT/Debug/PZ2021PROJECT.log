@@ -1,5 +1,4 @@
-﻿  City.cpp
-  Map.cpp
+﻿  Map.cpp
 C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Map.cpp(21,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
 C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Map.cpp(32,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
 C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Map.cpp(58,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
@@ -15,10 +14,4 @@ C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Map.cpp(345,22): warning C4018: "<": ni
 C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Map.cpp(349,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
 C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Map.cpp(356,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
 C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Map.cpp(383,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-  Road.cpp
-  Route.cpp
-C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Route.cpp(18,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Route.cpp(47,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\Route.cpp(85,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-  Generowanie kodu...
   PZ2021PROJECT.vcxproj -> C:\Users\Kinga\Desktop\MiNIPZ2021\PZ2021\PZ2021PROJECT\Debug\PZ2021PROJECT.lib

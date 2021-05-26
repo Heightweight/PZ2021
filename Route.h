@@ -46,7 +46,7 @@ namespace Orienteering
 		/// <param name="cities">cities vector</param>
 		Route(string route_file, vector<City> cities);
 		/// <summary>
-		/// 
+		/// current time of road (not necessairly full)
 		/// </summary>
 		double timeCurrent;
 		/// <summary>

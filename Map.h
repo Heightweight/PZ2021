@@ -63,7 +63,7 @@ namespace Orienteering
 		/// <summary>
 		/// Function check correctness of map
 		/// </summary>
-		/// <param name="time"></param>
+		/// <param name="time">salesman's time</param>
 		/// <returns>true if conditions are fufilled or false if not</returns>
 		bool check(double time);
 		//void show_solution(Route solution);
@@ -80,8 +80,13 @@ namespace Orienteering
 		/// <param name="cities">city parameter</param>
 		/// <param name="roads">road parameter</param>
 		Map(vector<City> cities, vector<Road> roads);
-
+		/// <summary>
+		/// index name
+		/// </summary>
 		map<string, int> indexName;
+		/// <summary>
+		/// delta from number
+		/// </summary>
 		map<int, vector<int>> deltaFromNumber;
 	};
 }

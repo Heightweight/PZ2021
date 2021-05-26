@@ -1,0 +1,239 @@
+\hypertarget{class_orienteering_1_1_map}{}\doxysection{Orienteering\+::Map Class Reference}
+\label{class_orienteering_1_1_map}\index{Orienteering::Map@{Orienteering::Map}}
+
+
+Short describtion of \mbox{\hyperlink{class_orienteering_1_1_map}{Map}} class.  
+
+
+
+
+{\ttfamily \#include $<$Map.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_orienteering_1_1_map_a39739a7e9be33d1e017248eb235e0774}{check\+\_\+cities}} ()
+\begin{DoxyCompactList}\small\item\em Function check conditions\+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_orienteering_1_1_route}{Route}} \mbox{\hyperlink{class_orienteering_1_1_map_a28d52cbeacc1003162c9f3a50fc5d4f2}{solve\+\_\+h}} (double \&time)
+\begin{DoxyCompactList}\small\item\em Heuristic solution of the problem. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_orienteering_1_1_route}{Route}} \mbox{\hyperlink{class_orienteering_1_1_map_a0bc708f3ebd3317629cee33eb86a4554}{solve\+\_\+e}} (double time)
+\begin{DoxyCompactList}\small\item\em Explicit solution of the problem. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_orienteering_1_1_map_aee22b801665358907d78bc080239a4bb}{check\+\_\+roads}} ()
+\begin{DoxyCompactList}\small\item\em Function check conditions\+: \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_orienteering_1_1_map_a06273780e231f35f32a2b90c6182f360}{check}} (double time)
+\begin{DoxyCompactList}\small\item\em Function check correctness of map \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_orienteering_1_1_map_ad7342f52b0c656fc0d54814ec046704d}{Map}} (string city\+\_\+file, string road\+\_\+file)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_orienteering_1_1_map}{Map}} constructor for files. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_orienteering_1_1_map_a339da017b46b012f33ae3077a0b2e238}{Map}} (vector$<$ \mbox{\hyperlink{class_orienteering_1_1_city}{City}} $>$ \mbox{\hyperlink{class_orienteering_1_1_map_a0682b8be374b4c33f3949859850db8e5}{cities}}, vector$<$ \mbox{\hyperlink{class_orienteering_1_1_road}{Road}} $>$ \mbox{\hyperlink{class_orienteering_1_1_map_af016e5ea86202db819564634c2939f3d}{roads}})
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_orienteering_1_1_map}{Map}} constructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{class_orienteering_1_1_city}{City}} $>$ \mbox{\hyperlink{class_orienteering_1_1_map_a0682b8be374b4c33f3949859850db8e5}{cities}}
+\begin{DoxyCompactList}\small\item\em Vector which contains all cities on the map. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_orienteering_1_1_road}{Road}} $>$ \mbox{\hyperlink{class_orienteering_1_1_map_af016e5ea86202db819564634c2939f3d}{roads}}
+\begin{DoxyCompactList}\small\item\em Vector which contains all roads on the map. \end{DoxyCompactList}\item 
+double $\ast$$\ast$ \mbox{\hyperlink{class_orienteering_1_1_map_aa643e1b8605593ff70aae58aba4f4036}{adjacency}}
+\begin{DoxyCompactList}\small\item\em Tabel which contains time of traveling between two cities. If time=0 then road don\textquotesingle{}t exist. \end{DoxyCompactList}\item 
+map$<$ string, int $>$ \mbox{\hyperlink{class_orienteering_1_1_map_a312200ba3bc370b06ebefc5d9ee1212c}{index\+Name}}
+\begin{DoxyCompactList}\small\item\em index name \end{DoxyCompactList}\item 
+map$<$ int, vector$<$ int $>$ $>$ \mbox{\hyperlink{class_orienteering_1_1_map_ad15196d72a92175d7eddc27b05dd09cc}{delta\+From\+Number}}
+\begin{DoxyCompactList}\small\item\em delta from number \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Short describtion of \mbox{\hyperlink{class_orienteering_1_1_map}{Map}} class. 
+
+Class contains map with cities and roads from \mbox{\hyperlink{class_orienteering_1_1_city}{City}} class and \mbox{\hyperlink{class_orienteering_1_1_road}{Road}} class.
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_orienteering_1_1_map_ad7342f52b0c656fc0d54814ec046704d}\label{class_orienteering_1_1_map_ad7342f52b0c656fc0d54814ec046704d}} 
+\index{Orienteering::Map@{Orienteering::Map}!Map@{Map}}
+\index{Map@{Map}!Orienteering::Map@{Orienteering::Map}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Map\+::\+Map (\begin{DoxyParamCaption}\item[{string}]{city\+\_\+file,  }\item[{string}]{road\+\_\+file }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_orienteering_1_1_map}{Map}} constructor for files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city\+\_\+file} & file with cities parameters\\
+\hline
+{\em road\+\_\+file} & file with roads parameters\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_orienteering_1_1_map_a339da017b46b012f33ae3077a0b2e238}\label{class_orienteering_1_1_map_a339da017b46b012f33ae3077a0b2e238}} 
+\index{Orienteering::Map@{Orienteering::Map}!Map@{Map}}
+\index{Map@{Map}!Orienteering::Map@{Orienteering::Map}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Map\+::\+Map (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_orienteering_1_1_city}{City}} $>$}]{cities,  }\item[{vector$<$ \mbox{\hyperlink{class_orienteering_1_1_road}{Road}} $>$}]{roads }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_orienteering_1_1_map}{Map}} constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cities} & city parameter\\
+\hline
+{\em roads} & road parameter\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_orienteering_1_1_map_a06273780e231f35f32a2b90c6182f360}\label{class_orienteering_1_1_map_a06273780e231f35f32a2b90c6182f360}} 
+\index{Orienteering::Map@{Orienteering::Map}!check@{check}}
+\index{check@{check}!Orienteering::Map@{Orienteering::Map}}
+\doxysubsubsection{\texorpdfstring{check()}{check()}}
+{\footnotesize\ttfamily bool Map\+::check (\begin{DoxyParamCaption}\item[{double}]{time }\end{DoxyParamCaption})}
+
+
+
+Function check correctness of map 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & salesman\textquotesingle{}s time\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if conditions are fufilled or false if not
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_orienteering_1_1_map_a39739a7e9be33d1e017248eb235e0774}\label{class_orienteering_1_1_map_a39739a7e9be33d1e017248eb235e0774}} 
+\index{Orienteering::Map@{Orienteering::Map}!check\_cities@{check\_cities}}
+\index{check\_cities@{check\_cities}!Orienteering::Map@{Orienteering::Map}}
+\doxysubsubsection{\texorpdfstring{check\_cities()}{check\_cities()}}
+{\footnotesize\ttfamily bool Map\+::check\+\_\+cities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function check conditions\+: 
+
+
+\begin{DoxyItemize}
+\item amount of stock for city is nonnegative
+\item city coordinations are in range \mbox{[}-\/1000,1000\mbox{]}
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+true if conditions are fufilled or false if not
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_orienteering_1_1_map_aee22b801665358907d78bc080239a4bb}\label{class_orienteering_1_1_map_aee22b801665358907d78bc080239a4bb}} 
+\index{Orienteering::Map@{Orienteering::Map}!check\_roads@{check\_roads}}
+\index{check\_roads@{check\_roads}!Orienteering::Map@{Orienteering::Map}}
+\doxysubsubsection{\texorpdfstring{check\_roads()}{check\_roads()}}
+{\footnotesize\ttfamily bool Map\+::check\+\_\+roads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function check conditions\+: 
+
+
+\begin{DoxyItemize}
+\item road travel time is positive
+\item roads are not crossed
+\item between two cities exist maximum one road
+\item don\textquotesingle{}t exist road between one city
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+true if conditions are fufilled or false if not
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_orienteering_1_1_map_a0bc708f3ebd3317629cee33eb86a4554}\label{class_orienteering_1_1_map_a0bc708f3ebd3317629cee33eb86a4554}} 
+\index{Orienteering::Map@{Orienteering::Map}!solve\_e@{solve\_e}}
+\index{solve\_e@{solve\_e}!Orienteering::Map@{Orienteering::Map}}
+\doxysubsubsection{\texorpdfstring{solve\_e()}{solve\_e()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_orienteering_1_1_route}{Route}} Map\+::solve\+\_\+e (\begin{DoxyParamCaption}\item[{double}]{time }\end{DoxyParamCaption})}
+
+
+
+Explicit solution of the problem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & maximum work time of salesman\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+problem solution
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_orienteering_1_1_map_a28d52cbeacc1003162c9f3a50fc5d4f2}\label{class_orienteering_1_1_map_a28d52cbeacc1003162c9f3a50fc5d4f2}} 
+\index{Orienteering::Map@{Orienteering::Map}!solve\_h@{solve\_h}}
+\index{solve\_h@{solve\_h}!Orienteering::Map@{Orienteering::Map}}
+\doxysubsubsection{\texorpdfstring{solve\_h()}{solve\_h()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_orienteering_1_1_route}{Route}} Map\+::solve\+\_\+h (\begin{DoxyParamCaption}\item[{double \&}]{time }\end{DoxyParamCaption})}
+
+
+
+Heuristic solution of the problem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & maximum work time of salesman\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+problem solution
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_orienteering_1_1_map_aa643e1b8605593ff70aae58aba4f4036}\label{class_orienteering_1_1_map_aa643e1b8605593ff70aae58aba4f4036}} 
+\index{Orienteering::Map@{Orienteering::Map}!adjacency@{adjacency}}
+\index{adjacency@{adjacency}!Orienteering::Map@{Orienteering::Map}}
+\doxysubsubsection{\texorpdfstring{adjacency}{adjacency}}
+{\footnotesize\ttfamily double$\ast$$\ast$ Orienteering\+::\+Map\+::adjacency}
+
+
+
+Tabel which contains time of traveling between two cities. If time=0 then road don\textquotesingle{}t exist. 
+
+\mbox{\Hypertarget{class_orienteering_1_1_map_a0682b8be374b4c33f3949859850db8e5}\label{class_orienteering_1_1_map_a0682b8be374b4c33f3949859850db8e5}} 
+\index{Orienteering::Map@{Orienteering::Map}!cities@{cities}}
+\index{cities@{cities}!Orienteering::Map@{Orienteering::Map}}
+\doxysubsubsection{\texorpdfstring{cities}{cities}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_orienteering_1_1_city}{City}}$>$ Orienteering\+::\+Map\+::cities}
+
+
+
+Vector which contains all cities on the map. 
+
+\mbox{\Hypertarget{class_orienteering_1_1_map_ad15196d72a92175d7eddc27b05dd09cc}\label{class_orienteering_1_1_map_ad15196d72a92175d7eddc27b05dd09cc}} 
+\index{Orienteering::Map@{Orienteering::Map}!deltaFromNumber@{deltaFromNumber}}
+\index{deltaFromNumber@{deltaFromNumber}!Orienteering::Map@{Orienteering::Map}}
+\doxysubsubsection{\texorpdfstring{deltaFromNumber}{deltaFromNumber}}
+{\footnotesize\ttfamily map$<$int, vector$<$int$>$ $>$ Orienteering\+::\+Map\+::delta\+From\+Number}
+
+
+
+delta from number 
+
+\mbox{\Hypertarget{class_orienteering_1_1_map_a312200ba3bc370b06ebefc5d9ee1212c}\label{class_orienteering_1_1_map_a312200ba3bc370b06ebefc5d9ee1212c}} 
+\index{Orienteering::Map@{Orienteering::Map}!indexName@{indexName}}
+\index{indexName@{indexName}!Orienteering::Map@{Orienteering::Map}}
+\doxysubsubsection{\texorpdfstring{indexName}{indexName}}
+{\footnotesize\ttfamily map$<$string, int$>$ Orienteering\+::\+Map\+::index\+Name}
+
+
+
+index name 
+
+\mbox{\Hypertarget{class_orienteering_1_1_map_af016e5ea86202db819564634c2939f3d}\label{class_orienteering_1_1_map_af016e5ea86202db819564634c2939f3d}} 
+\index{Orienteering::Map@{Orienteering::Map}!roads@{roads}}
+\index{roads@{roads}!Orienteering::Map@{Orienteering::Map}}
+\doxysubsubsection{\texorpdfstring{roads}{roads}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_orienteering_1_1_road}{Road}}$>$ Orienteering\+::\+Map\+::roads}
+
+
+
+Vector which contains all roads on the map. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Map.\+h\item 
+Map.\+cpp\end{DoxyCompactItemize}

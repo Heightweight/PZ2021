@@ -1,0 +1,169 @@
+\hypertarget{class_orienteering_1_1_route}{}\doxysection{Orienteering\+::Route Class Reference}
+\label{class_orienteering_1_1_route}\index{Orienteering::Route@{Orienteering::Route}}
+
+
+Short describtion of \mbox{\hyperlink{class_orienteering_1_1_route}{Route}} class.  
+
+
+
+
+{\ttfamily \#include $<$Route.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_orienteering_1_1_route_ac9ae9c84fc780db0b8f914aca89eb82a}{append}} (\mbox{\hyperlink{class_orienteering_1_1_city}{City}} \&c)
+\begin{DoxyCompactList}\small\item\em Add city to city vector \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_orienteering_1_1_route_a60f940d9cdd490f79e524a1a6397cb46}{time}} (double $\ast$$\ast$\&adjacency)
+\begin{DoxyCompactList}\small\item\em Function of route time \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_orienteering_1_1_route_ab8a5b5c97b4f05afca0967b6c321e75b}{profit}} ()
+\begin{DoxyCompactList}\small\item\em Function of saled stock \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_orienteering_1_1_route_a995bcd4bfe6ef3f83df1aa1d8a26e36b}{Route}} (vector$<$ \mbox{\hyperlink{class_orienteering_1_1_city}{City}} $>$ \mbox{\hyperlink{class_orienteering_1_1_route_acdd32d9ac2f1204ad206c2596cfabf38}{cities}})
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_orienteering_1_1_route}{Route}} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_orienteering_1_1_route_a5eb2769aec70fd98f6efa151bc76a88c}{Route}} (string route\+\_\+file, vector$<$ \mbox{\hyperlink{class_orienteering_1_1_city}{City}} $>$ \mbox{\hyperlink{class_orienteering_1_1_route_acdd32d9ac2f1204ad206c2596cfabf38}{cities}})
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_orienteering_1_1_route}{Route}} constructor for file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_orienteering_1_1_route_a3a7ad7a1a00ce337d93ccbcc1618380d}{operator==}} (\mbox{\hyperlink{class_orienteering_1_1_route}{Route}} \&c)
+\begin{DoxyCompactList}\small\item\em Operator == for \mbox{\hyperlink{class_orienteering_1_1_route}{Route}} class \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{class_orienteering_1_1_city}{City}} $>$ \mbox{\hyperlink{class_orienteering_1_1_route_acdd32d9ac2f1204ad206c2596cfabf38}{cities}}
+\begin{DoxyCompactList}\small\item\em Vector which contains route of salesman. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_orienteering_1_1_route_a4a8fd4c427c81ee1e734edf0f8099e41}{time\+Current}}
+\begin{DoxyCompactList}\small\item\em current time of road (not necessairly full) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Short describtion of \mbox{\hyperlink{class_orienteering_1_1_route}{Route}} class. 
+
+Class contains route of salesman.
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_orienteering_1_1_route_a995bcd4bfe6ef3f83df1aa1d8a26e36b}\label{class_orienteering_1_1_route_a995bcd4bfe6ef3f83df1aa1d8a26e36b}} 
+\index{Orienteering::Route@{Orienteering::Route}!Route@{Route}}
+\index{Route@{Route}!Orienteering::Route@{Orienteering::Route}}
+\doxysubsubsection{\texorpdfstring{Route()}{Route()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Route\+::\+Route (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_orienteering_1_1_city}{City}} $>$}]{cities }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_orienteering_1_1_route}{Route}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cities} & city vector\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_orienteering_1_1_route_a5eb2769aec70fd98f6efa151bc76a88c}\label{class_orienteering_1_1_route_a5eb2769aec70fd98f6efa151bc76a88c}} 
+\index{Orienteering::Route@{Orienteering::Route}!Route@{Route}}
+\index{Route@{Route}!Orienteering::Route@{Orienteering::Route}}
+\doxysubsubsection{\texorpdfstring{Route()}{Route()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Route\+::\+Route (\begin{DoxyParamCaption}\item[{string}]{route\+\_\+file,  }\item[{vector$<$ \mbox{\hyperlink{class_orienteering_1_1_city}{City}} $>$}]{cities }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_orienteering_1_1_route}{Route}} constructor for file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em route\+\_\+file} & file with route\\
+\hline
+{\em cities} & cities vector\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_orienteering_1_1_route_ac9ae9c84fc780db0b8f914aca89eb82a}\label{class_orienteering_1_1_route_ac9ae9c84fc780db0b8f914aca89eb82a}} 
+\index{Orienteering::Route@{Orienteering::Route}!append@{append}}
+\index{append@{append}!Orienteering::Route@{Orienteering::Route}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily void Route\+::append (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_orienteering_1_1_city}{City}} \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add city to city vector 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & added city\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_orienteering_1_1_route_a3a7ad7a1a00ce337d93ccbcc1618380d}\label{class_orienteering_1_1_route_a3a7ad7a1a00ce337d93ccbcc1618380d}} 
+\index{Orienteering::Route@{Orienteering::Route}!operator==@{operator==}}
+\index{operator==@{operator==}!Orienteering::Route@{Orienteering::Route}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Route\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_orienteering_1_1_route}{Route}} \&}]{c }\end{DoxyParamCaption})}
+
+
+
+Operator == for \mbox{\hyperlink{class_orienteering_1_1_route}{Route}} class 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & route\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_orienteering_1_1_route_ab8a5b5c97b4f05afca0967b6c321e75b}\label{class_orienteering_1_1_route_ab8a5b5c97b4f05afca0967b6c321e75b}} 
+\index{Orienteering::Route@{Orienteering::Route}!profit@{profit}}
+\index{profit@{profit}!Orienteering::Route@{Orienteering::Route}}
+\doxysubsubsection{\texorpdfstring{profit()}{profit()}}
+{\footnotesize\ttfamily int Route\+::profit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Function of saled stock 
+
+\begin{DoxyReturn}{Returns}
+amount of saled stock
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_orienteering_1_1_route_a60f940d9cdd490f79e524a1a6397cb46}\label{class_orienteering_1_1_route_a60f940d9cdd490f79e524a1a6397cb46}} 
+\index{Orienteering::Route@{Orienteering::Route}!time@{time}}
+\index{time@{time}!Orienteering::Route@{Orienteering::Route}}
+\doxysubsubsection{\texorpdfstring{time()}{time()}}
+{\footnotesize\ttfamily double Route\+::time (\begin{DoxyParamCaption}\item[{double $\ast$$\ast$\&}]{adjacency }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Function of route time 
+
+
+\begin{DoxyParams}{Parameters}
+{\em adjacency} & adjacency matrix for current map\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+time of route
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_orienteering_1_1_route_acdd32d9ac2f1204ad206c2596cfabf38}\label{class_orienteering_1_1_route_acdd32d9ac2f1204ad206c2596cfabf38}} 
+\index{Orienteering::Route@{Orienteering::Route}!cities@{cities}}
+\index{cities@{cities}!Orienteering::Route@{Orienteering::Route}}
+\doxysubsubsection{\texorpdfstring{cities}{cities}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_orienteering_1_1_city}{City}}$>$ Orienteering\+::\+Route\+::cities}
+
+
+
+Vector which contains route of salesman. 
+
+\mbox{\Hypertarget{class_orienteering_1_1_route_a4a8fd4c427c81ee1e734edf0f8099e41}\label{class_orienteering_1_1_route_a4a8fd4c427c81ee1e734edf0f8099e41}} 
+\index{Orienteering::Route@{Orienteering::Route}!timeCurrent@{timeCurrent}}
+\index{timeCurrent@{timeCurrent}!Orienteering::Route@{Orienteering::Route}}
+\doxysubsubsection{\texorpdfstring{timeCurrent}{timeCurrent}}
+{\footnotesize\ttfamily double Orienteering\+::\+Route\+::time\+Current}
+
+
+
+current time of road (not necessairly full) 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Route.\+h\item 
+Route.\+cpp\end{DoxyCompactItemize}
