@@ -26,7 +26,6 @@ namespace Orienteering
 		/// city name
 		/// </summary>
 		std::string c_name; 
-
 		/// <summary>
 		/// Constructor of City class.
 		/// </summary>
@@ -42,6 +41,11 @@ namespace Orienteering
 		/// <param name="c">city parameter</param>
 		/// <returns>true if equal of false if not</returns>
 		bool operator==(City c);
+		/// <summary>
+		/// number of this city in a context of a map.
+		/// </summary>
+		
+		int nubmerAssigned;
 
 	};
 }

@@ -44,7 +44,7 @@ namespace Orienteering
 		/// </summary>
 		/// <param name="time">maximum work time of salesman</param>
 		/// <returns>problem solution</returns>
-		Route solve_h(double time); //heuristic solution
+		Route solve_h(double &time); //heuristic solution
 		/// <summary>
 		/// Explicit solution of the problem.
 		/// </summary>
@@ -80,6 +80,8 @@ namespace Orienteering
 		/// <param name="cities">city parameter</param>
 		/// <param name="roads">road parameter</param>
 		Map(vector<City> cities, vector<Road> roads);
+
 		map<string, int> indexName;
+		map<int, vector<int>> deltaFromNumber;
 	};
 }

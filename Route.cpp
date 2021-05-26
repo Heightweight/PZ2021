@@ -15,7 +15,7 @@ using namespace std;
 City lookupCityRByName(string name, vector<City> cities)
 {
 	City c = City();
-	for (int i = 0; i < cities.size(); i++)
+	for (int i = 0; i < cities.size(); ++i)
 	{
 		if (cities[i].c_name == name)
 			return cities[i];
@@ -23,35 +23,28 @@ City lookupCityRByName(string name, vector<City> cities)
 	return c; //returns a fab if no city was found 
 }
 
-void Route::append(City c)
+inline void Route::append(City &c)
 {
 	this->cities.push_back(c);
 }
 
-double Route::time(vector<Road> roadsPassed)
+inline double Route::time(double** &adjacency)
 {
 	double t = 0;
-	for (int i = 0; i < (int)cities.size() - 1; i++)
+	for (int i = 0; i < (int)this->cities.size() - 1; ++i)
 	{
-		City start = cities[i];
-		City end = cities[i + 1];
-		for (int j = 0; j < roadsPassed.size(); j++)
-		{
-			if ((roadsPassed[j].start == start && roadsPassed[j].end == end) || (roadsPassed[j].start == end && roadsPassed[j].end == start))
-			{
-				t += roadsPassed[j].time;
-				break;
-			}
-		}
+		City start = this->cities[i];
+		City end = this->cities[i + 1];
+		t += adjacency[start.nubmerAssigned][end.nubmerAssigned];
 	}
 	return t;
 }
 
-int Route::profit()
+inline int Route::profit()
 {
 	int p = 0;
 	vector<City> visited;
-	for (int i = 0; i < cities.size(); i++)
+	for (int i = 0; i < cities.size(); ++i)
 	{
 		if (find(visited.begin(), visited.end(), cities[i]) == visited.end())
 		{
@@ -89,7 +82,7 @@ bool Route::operator==(Route& r)
 {
 	if (this->cities.size() != r.cities.size())
 		return false;
-	for (int i = 0; i < r.cities.size(); i++)
+	for (int i = 0; i < r.cities.size(); ++i)
 	{
 		if (!(this->cities[i] == r.cities[i]))
 			return false;

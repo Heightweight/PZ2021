@@ -18,7 +18,7 @@ using namespace std;
 
 int lookupCity(City c, vector<City> cities)
 {
-	for (int i = 0; i < cities.size(); i++)
+	for (int i = 0; i < cities.size(); ++i)
 	{
 		if (cities[i] == c)
 			return i;
@@ -29,7 +29,7 @@ int lookupCity(City c, vector<City> cities)
 City lookupCityByName(string name, vector<City> cities)
 {
 	City c = City();
-	for (int i = 0; i < cities.size(); i++)
+	for (int i = 0; i < cities.size(); ++i)
 	{
 		if (cities[i].c_name == name)
 			return cities[i];
@@ -41,29 +41,34 @@ Map::Map(vector<City> cities, vector<Road> roads)
 {
 	this->cities = cities;
 	this->roads = roads;
+	map<int, vector<int>> dFN;
 	const int numVertices = cities.size();
 	this->adjacency = new double* [numVertices];
-	for (int i = 0; i < numVertices; i++) 
+	for (int i = 0; i < numVertices; ++i)
 	{
 		adjacency[i] = new double[numVertices];
-		for (int j = 0; j < numVertices; j++)
+		this->cities[i].nubmerAssigned = i;
+		dFN[i] = {};
+		for (int j = 0; j < numVertices; ++j)
 		{
 			adjacency[i][j] = 0;
 		}
 
 	}
-	for (int i = 0; i < roads.size(); i++)
+	for (int i = 0; i < roads.size(); ++i)
 	{	
 		Road r = roads[i];
 		int first = lookupCity(r.start, cities);
 		int last = lookupCity(r.end, cities);
 		adjacency[first][last] = r.time;
 		adjacency[last][first] = r.time;
+		dFN[first].push_back(last);
 	}
-	for (int i = 0; i < cities.size(); i++)
+	for (int i = 0; i < cities.size(); ++i)
 	{
 		indexName[cities[i].c_name] = i;
 	}
+	this->deltaFromNumber = dFN;
 }
 
 Map::Map(string city_file, string road_file)
@@ -73,11 +78,12 @@ Map::Map(string city_file, string road_file)
 	ifstream cityStream(city_file);
 	string read = "";
 	getline(cityStream, read);
+	int j = 0;
 	while (getline(cityStream, read))
 	{
 		stringstream str(read);
 		string data[4];
-		for (int i = 0; i < 4; i++)
+		for (int i = 0; i < 4; ++i)
 		{
 			getline(str, data[i], ',');
 		}
@@ -86,7 +92,9 @@ Map::Map(string city_file, string road_file)
 		double y = stod(data[2]);
 		int prize = stoi(data[3]);
 		City nextInQueue = City(x, y, prize, name);
+		nextInQueue.nubmerAssigned = j;
 		city_init.push_back(nextInQueue);
+		++j;
 
 	}
 	ifstream roadStream(road_file);
@@ -96,7 +104,7 @@ Map::Map(string city_file, string road_file)
 	{
 		stringstream str(read);
 		string data[3];
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < 3; ++i)
 		{
 			getline(str, data[i], ',');
 		}
@@ -111,11 +119,12 @@ Map::Map(string city_file, string road_file)
 	this->cities = city_init;
 	this->roads = road_init;
 	this->adjacency = Map(city_init, road_init).adjacency;
+	this->deltaFromNumber = Map(city_init, road_init).deltaFromNumber;
 }
 
 bool Map::check_cities()
 {
-	for (int i = 0; i < cities.size(); i++)
+	for (int i = 0; i < cities.size(); ++i)
 	{
 		if (cities[i].prize < 0)
 			return false;
@@ -124,7 +133,7 @@ bool Map::check_cities()
 		if ((cities[i].y > 1000) || (cities[i].y < -1000))
 			return false;
 		
-		for (int j = i + 1; j < cities.size(); j++)
+		for (int j = i + 1; j < cities.size(); ++j)
 			if ((cities[i].x == cities[j].x) && (cities[i].y == cities[j].y))
 				return false;
 	}
@@ -184,7 +193,7 @@ bool intersect(Road e1, Road e2)
 
 bool Map::check_roads()
 {
-	for (int i = 0; i < roads.size(); i++)
+	for (int i = 0; i < roads.size(); ++i)
 	{
 		if (roads[i].start == roads[i].end)
 		{
@@ -206,7 +215,7 @@ bool Map::check_roads()
 			return false;
 		}
 		
-		for (int j = i + 1; j < roads.size(); j++)
+		for (int j = i + 1; j < roads.size(); ++j)
 		{
 			if (intersect(roads[i], roads[j]))
 			{
@@ -238,16 +247,16 @@ Route Map::solve_e(double time)
 		vector<City> cities = this->cities;
 		while (r_old.size() != 0)
 		{
-			for (int i = 0; i < r_old.size(); i++)
+			for (int i = 0; i < r_old.size(); ++i)
 			{
-				for (int j = 0; j < length; j++)
+				for (int j = 0; j < length; ++j)
 				{
 					Route toModify = r_old[i];
 					City end = toModify.cities.back();
 					City toAppend = cities[j];
 					int numberEnd = lookupCity(end, cities);
 					int numberToAppend = lookupCity(toAppend, cities);
-					if (adjacency[numberToAppend][numberEnd] > 0 && toModify.time(this->roads) + this->adjacency[numberToAppend][numberEnd] <= time)
+					if (adjacency[numberToAppend][numberEnd] > 0 && toModify.time(this->adjacency) + this->adjacency[numberToAppend][numberEnd] <= time)
 					{
 						toModify.append(toAppend);
 						r_old.push_back(toModify);
@@ -267,73 +276,64 @@ Route Map::solve_e(double time)
 		return max_route;
 }
 
-double weight(int j, int i, Map* m)
+double weight(int& j, int& i, Map& m)
 {
-	if (m->adjacency[i][j] != 0)
-	{
-		double w = pow((m->cities[i].prize), 2) / pow(m->adjacency[i][j], 3);
-		return w;
-	}
+	if (m.adjacency[i][j] != 0)
+		return pow((m.cities[i].prize), 2) / pow(m.adjacency[i][j], 3);
 
 	return -1; 
 }
 
-vector<int> delta(int cityNumber, Route route, Map* m, double time)
+vector<int> delta(int &cityNumber, Route &route, Map &m, double &time)
 {
 	vector<int> delta; //empty init
-	int length = m->cities.size(); //length = amount of cities on the map
-	for (int i = 0; i < length; i++) //cycling through all cities
+	vector<int> deltaUnfiltered = m.deltaFromNumber[cityNumber];
+	int length = deltaUnfiltered.size();
+	double t = route.timeCurrent;
+	for (int i = 0; i < length; ++i) //cycling through all cities
 	{
-		if (m->adjacency[cityNumber][i] > 0 && route.time(m->roads)+m->adjacency[cityNumber][i]<time)
-			delta.push_back(i);
+		if (t+m.adjacency[cityNumber][deltaUnfiltered[i]]<time)
+			delta.push_back(deltaUnfiltered[i]);
 	}
 	return delta; //returns all acceptable adjacent cities to cityNumber
 
 }
 
-Route next_r(Map* m, Route r, double time)
+Route next_r(Map &m, Route &r, double &time)
 {
-	vector<int> city_delta = delta(lookupCity(r.cities.back(), m->cities), r, m, time);
+	int endCity = r.cities.back().nubmerAssigned;
+	vector<int> city_delta = delta(endCity, r, m, time);
 
-	if (city_delta.size() == 0)
-	{
-		return r;
-	}
-	else
-	{
-		int randomized = 0;
-		
+	if (city_delta.size() != 0)
+	{	
 		int n = city_delta.size();
 		vector<double> weights;
-		
-		for (int i = 0; i < n; i++)
+		for (int i = 0; i < n; ++i)
 		{
-			double w = weight(lookupCity(r.cities.back(), m->cities), city_delta[i], m);
-			for (int j = 0; j < r.cities.size(); j++)
+			double w = weight(endCity, city_delta[i], m);
+			for (int j = 0; j < r.cities.size(); ++j)
 			{
-				if (city_delta[i] == lookupCity(r.cities[j], m->cities))
+				if (city_delta[i] == r.cities[j].nubmerAssigned)
 				{
 					w = 0;
+					break;
 				}
 			}
 			weights.push_back(w);
 		}
-		for (int i = 0; i < n; i++)
+		for (int i = 0; i < n; ++i)
 		{
-			for (int j = i + 1; j < n; j++)
+			for (int j = i + 1; j < n; ++j)
 			{
 				if (weights[i] < weights[j])
 				{
-					double w_buff = weights[i];
-					int n_buff = city_delta[i];
-					city_delta[i] = city_delta[j];
-					weights[i] = weights[j];
-					city_delta[j] = n_buff;
-					weights[j] = w_buff;
+					swap(weights[i], weights[j]);
+					swap(city_delta[i], city_delta[j]);
+
 				}
 			}
-		} //sorting weights and delta simultaniously 
-		
+		} //sorting weights and delta at the same time
+
 		vector<double> max_3(weights.begin(), weights.begin() + min(3, (int)weights.size()));
 		double sum = 0;
 		for (vector<double>::iterator it = max_3.begin(); it != max_3.end(); ++it)
@@ -342,54 +342,64 @@ Route next_r(Map* m, Route r, double time)
 		}
 		if (sum > 0)
 		{
-			for (int i = 0; i < max_3.size(); i++)
+			for (int i = 0; i < max_3.size(); ++i)
 				max_3[i] /= sum;
 		}
 		else
-			for (int i = 0; i < max_3.size(); i++)
+			for (int i = 0; i < max_3.size(); ++i)
 				max_3[i] = (1 / max_3.size());
 
-		
+
 		double probability = ((rand() % 100) + 1) / 100;
 		double accum = 0;
-		for (int i = 0; i < max_3.size(); i++)
+		int randomized = 0;
+		for (int i = 0; i < max_3.size(); ++i)
 		{
 			if (probability > accum && probability <= accum + max_3[i])
+			{
 				randomized = i;
+				break;
+			}
 			accum += max_3[i];
 		}
-		Route copy = r;
-		copy.append(m->cities[city_delta[randomized]]);
-		if (copy.time(m->roads) <= time)
+		/*Route copy = r;
+		copy.append(m.cities[city_delta[randomized]]);
+		if (copy.time(m.roads) <= time)
 		{
-			r.append(m->cities[city_delta[randomized]]);
-		}
+			
+		}*/
+		r.append(m.cities[city_delta[randomized]]);
+		r.timeCurrent += m.adjacency[city_delta[randomized]][endCity];
 		return r;
-
 	}
+	 
+	return r;
 }
 
-Route Map::solve_h(double time)
+Route Map::solve_h(double &time)
 {
 	Route r_max = Route(vector<City>());
 	int max_profit = -1;
-	for (int i = 0; i < cities.size(); i++)
+	for (int i = 0; i < cities.size(); ++i)
 	{
-		for (int j = 0; j < 1; j++)
+		for (int j = 0; j < 100; ++j)
 		{
 			Route newRoute = Route(vector<City>());
 			Route r_old = newRoute;		
 			newRoute.append(this->cities[i]);
 			Route r_new = newRoute;
-			while (!(r_new == r_old))
+			r_old.timeCurrent = 0;
+			r_new.timeCurrent = 0;
+			do
 			{
 				r_old = r_new;
-				r_new = next_r(this, r_new, time);
-			}
-			if (r_new.profit() > max_profit)
+				r_new = next_r(*this, r_new, time);
+			} while (!(r_new.cities.back() == r_old.cities.back()));
+			int r = r_new.profit();
+			if (r > max_profit)
 			{
 				r_max = r_new;
-				max_profit = r_new.profit();
+				max_profit = r;
 			}
 		}
 	}
