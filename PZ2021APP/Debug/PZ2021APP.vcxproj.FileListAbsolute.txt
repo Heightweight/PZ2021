@@ -1,2 +1,3 @@
 C:\Users\heiwei\Documents\PZ2021\PZ2021APP\Debug\PZ2021APP.exe
 C:\Users\Kinga\Desktop\MiNI_PZ2021\PZ2021\PZ2021APP\Debug\PZ2021APP.exe
+C:\Users\heiwei\Documents\PZ2021CLONE\PZ2021\PZ2021APP\Debug\PZ2021APP.exe
