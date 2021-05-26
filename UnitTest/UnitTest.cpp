@@ -14,32 +14,28 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace UnitTest
 {
-	TEST_CLASS(UnitTestMap)
+	TEST_CLASS(UnitTest1)
 	{
 	public:
 		TEST_METHOD(deltaCorrectness)
 		{
-			string cities = "C:\\Users\\heiwei\\Documents\\PZ2021\\plikicsv\\cities0.csv";
-			string roads = "C:\\Users\\heiwei\\Documents\\PZ2021\\plikicsv\\roads0.csv";
+			//string cities = "C:\\Users\\heiwei\\Documents\\PZ2021\\plikicsv\\cities0.csv";
+			//string roads = "C:\\Users\\heiwei\\Documents\\PZ2021\\plikicsv\\roads0.csv";
+			string cities = "C:\\Users\\Kinga\\Desktop\\MiNI_PZ2021\\PZ2021\\plikicsv\\cities0.csv";
+			string roads = "C:\\Users\\Kinga\\Desktop\\MiNI_PZ2021\\PZ2021\\plikicsv\\roads0.csv";
 			Map m(cities, roads);
 			vector<City> c;
 			Route empt = Route(c);
 			Assert::IsTrue(m.adjacency[0][1] > 0 && empt.time(m.roads) + m.adjacency[0][1] < 20);
 			Assert::IsTrue(delta(0, empt, &m, 20)[0] == 1);
-		}
-
-		TEST_METHOD(LookupCityByNameRoute)
-		{
-			City L(0, 0, 1, "London");
-			City M(0, 5, 4, "Manchester");
-			vector<City> cities = { M,L };
-			Assert::IsTrue(M == lookupCityRByName("Manchester", cities));
-		}
+		} 
 		TEST_METHOD(solveHeuristic)
 		{
-			string cities = "C:\\Users\\heiwei\\Documents\\PZ2021\\plikicsv\\cities0.csv";
-			string roads = "C:\\Users\\heiwei\\Documents\\PZ2021\\plikicsv\\roads0.csv";
-			Map m(cities, roads);
+			//string cities = "C:\\Users\\heiwei\\Documents\\PZ2021\\plikicsv\\cities0.csv";
+			//string roads = "C:\\Users\\heiwei\\Documents\\PZ2021\\plikicsv\\roads0.csv";
+			string cities = "C:\\Users\\Kinga\\Desktop\\MiNI_PZ2021\\PZ2021\\plikicsv\\cities0.csv";
+			string roads = "C:\\Users\\Kinga\\Desktop\\MiNI_PZ2021\\PZ2021\\plikicsv\\roads0.csv";
+			Map m(cities, roads); 
 			vector<City> c;
 			/*Route empt = Route(c);
 			empt.append(m.cities[0]);
@@ -71,8 +67,10 @@ namespace UnitTest
 
 		TEST_METHOD(readFromFile)
 		{
-			string cities = "C:\\Users\\heiwei\\Documents\\PZ2021\\plikicsv\\cities0.csv";
-			string roads = "C:\\Users\\heiwei\\Documents\\PZ2021\\plikicsv\\roads0.csv";
+			//string cities = "C:\\Users\\heiwei\\Documents\\PZ2021\\plikicsv\\cities0.csv";
+			//string roads = "C:\\Users\\heiwei\\Documents\\PZ2021\\plikicsv\\roads0.csv";
+			string cities = "C:\\Users\\Kinga\\Desktop\\MiNI_PZ2021\\PZ2021\\plikicsv\\cities0.csv";
+			string roads = "C:\\Users\\Kinga\\Desktop\\MiNI_PZ2021\\PZ2021\\plikicsv\\roads0.csv";
 			Map m(cities, roads);
 			Assert::IsTrue(m.check(1));
 			Assert::AreEqual(m.adjacency[0][1], 15.0);
@@ -97,11 +95,9 @@ namespace UnitTest
 		{
 			City L(0, 0, 10, "London");
 			City M(4, 5, 25, "Manchester");
-			City B(2, 2, 18, "Birmingham");
-			Road r1(L, B, -2.5);
-			Road r2(B, M, 5);
-			vector<City> cities = { M,L,B };
-			vector<Road> roads = { r1,r2 };
+			Road r(L, M, -2.5);
+			vector<City> cities = { M,L };
+			vector<Road> roads = { r };
 			Map map(cities, roads);
 			Assert::AreEqual(false, map.check(25));
 		}
@@ -109,11 +105,10 @@ namespace UnitTest
 		{
 			City L(0, 0, 10, "London");
 			City M(4, 5, 25, "Manchester");
-			City B(2, 2, 18, "Birmingham");
 			Road r1(L, M, 7);
 			Road r2(M, L, 5);
-			vector<City> cities{ M,L,B };
-			vector<Road> roads{ r1,r2 };
+			vector<City> cities = { M,L };
+			vector<Road> roads = { r1,r2 };
 			Map map(cities, roads);
 			Assert::AreEqual(false, map.check(20));
 		}
@@ -124,7 +119,7 @@ namespace UnitTest
 			Map map(cities, roads);
 			Assert::AreEqual(false, map.check(20));
 		}
-		TEST_METHOD(CrossingRoads)  // B³¹d przecinaj¹ce siê drogi nie s¹ odrzucane
+		TEST_METHOD(CrossingRoads)
 		{
 			City L(0, 0, 10, "London");
 			City M(5, 5, 25, "Manchester");
@@ -132,45 +127,37 @@ namespace UnitTest
 			City N(0, 5, 10, "Newcastle");
 			Road r1(L, M, 7);
 			Road r2(B, N, 5);
-			vector<City> cities{ M,L,B,N };
-			vector<Road> roads{ r1,r2 };
+			vector<City> cities = { M,L,B,N };
+			vector<Road> roads = { r1,r2 };
 			Map map(cities, roads);
 			Assert::AreEqual(false, map.check(20));
 		}
 		TEST_METHOD(AbsCityCoordinateMoreThan1000)
 		{
-			City L(0, 0, 10, "London");
 			City M(4, -1075, 25, "Manchester");
-			City B(2, 2, 18, "Birmingham");
-			Road r1(L, B, 7);
-			Road r2(B, M, 5);
-			vector<City> cities = { M,L,B };
-			vector<Road> roads = { r1,r2 };
-			Map map(cities, roads);
-			Assert::AreEqual(false, map.check(30));
+			City L(0, 1000, 10, "London");
+			vector<City> cities1 = { M };
+			vector<City> cities2 = { L };
+			vector<Road> roads = { };
+			Map map1(cities1, roads);
+			Map map2(cities2, roads);
+			Assert::AreEqual(false, map1.check(30));
+			Assert::AreEqual(true, map2.check(30));
 		}
 		TEST_METHOD(TwoCitiesInOnePlace)
 		{
-			City L(0, 0, 10, "London");
-			City M(4, 5, 25, "Manchester");
 			City B(2, 1, 18, "Birmingham");
 			City S(2, 1, 5, "Sheffield");
-			Road r1(L, B, 7);
-			Road r2(B, M, 5);
-			vector<City> cities{M, L, B, S};
-			vector<Road> roads{r1, r2};
+			vector<City> cities = { B, S };
+			vector<Road> roads = { };
 			Map map(cities, roads);
 			Assert::AreEqual(false, map.check(30));
 		}
 		TEST_METHOD(PrizeLessThanZero)
 		{
-			City L(0, 0, 10, "London");
-			City M(4, 5, 25, "Manchester");
 			City B(2, 2, -18, "Birmingham");
-			Road r1(L, B, 8);
-			Road r2(B, M, 5);
-			vector<City> cities = { M,L,B };
-			vector<Road> roads = { r1,r2 };
+			vector<City> cities = { B };
+			vector<Road> roads = {  };
 			Map map(cities, roads);
 			Assert::AreEqual(false, map.check(25));
 		}
@@ -178,15 +165,13 @@ namespace UnitTest
 		{
 			City L(0, 0, 10, "London");
 			City M(4, 5, 25, "Manchester");
-			City B(2, 2, 18, "Birmingham");
-			Road r1(L, B, -2.5);
-			Road r2(B, M, 5);
-			vector<City> cities = { M,L,B };
-			vector<Road> roads = { r1,r2 };
+			Road r(L, M, 0);
+			vector<City> cities = { M,L };
+			vector<Road> roads = { r };
 			Map map(cities, roads);
 			Assert::AreEqual(false, map.check(25));
 		}
-		TEST_METHOD(RoadBeatweenSameCity) 
+		TEST_METHOD(RoadBeatweenSameCity)
 		{
 			City L(3.5, 4, 20, "Leicester");
 			Road r(L, L, 5);
@@ -196,20 +181,84 @@ namespace UnitTest
 			Assert::AreEqual(false, map.check(25));
 		}
 	};
-	TEST_CLASS(UnitTestTime)
+	TEST_CLASS(UnitTest2)
 	{
 	public:
 		TEST_METHOD(TimeLessThanZero)
 		{
 			City L(0, 0, 10, "London");
 			City M(4, 5, 25, "Manchester");
-			City B(2, 2, 18, "Birmingham");
-			Road r1(L, B, 7);
-			Road r2(B, M, 5);
-			vector<City> cities = { M,L,B };
-			vector<Road> roads = { r1,r2 };
+			Road r(L, M, 7);
+			vector<City> cities = { M,L };
+			vector<Road> roads = { r };
 			Map map(cities, roads);
 			Assert::AreEqual(false, map.check(-2));
+		}
+	};
+	TEST_CLASS(UnitTest3)
+	{
+	public:
+		TEST_METHOD(RouteProfit)
+		{
+			City L(0, 0, 1, "London");
+			City M(0, 5, 4, "Manchester");
+			City B(5, 0, 3, "Birmingham");
+			City N(0, -5, 2, "Newcastle");
+			vector<City> route = { L,M,L,B,L,N };
+			Assert::AreEqual(10, Route(route).profit());
+		}
+		TEST_METHOD(RouteTime)
+		{
+			City L(0, 0, 1, "London");
+			City M(0, 5, 4, "Manchester");
+			City B(5, 0, 3, "Birmingham");
+			City N(0, -5, 2, "Newcastle");
+			Road r1(M, L, 1);
+			Road r2(L, B, 2);
+			Road r3(B, L, 2);
+			Road r4(L, N, 3);
+			vector<City> route = { M,L,B,L,N };
+			vector<Road> roadsPassed = { r1,r2,r3,r4 };
+			Assert::AreEqual(8.0, Route(route).time(roadsPassed));
+		}
+		TEST_METHOD(LookUpCitiesMap)
+		{
+			City L(0, 0, 1, "London");
+			City M(0, 5, 4, "Manchester");
+			vector<City> cities = { M,L };
+			Assert::AreEqual(1, lookupCity(L, cities));
+		}
+		TEST_METHOD(LookUpByNameRoute)
+		{
+			City L(0, 0, 1, "London");
+			City M(0, 5, 4, "Manchester");
+			vector<City> cities = { M,L };
+			Assert::IsTrue(M == lookupCityRByName("Manchester", cities));
+			Assert::IsFalse(L == lookupCityRByName("Manchester", cities));
+		}
+		TEST_METHOD(LookUpByNameMap)
+		{
+			City L(0, 0, 1, "London");
+			City M(0, 5, 4, "Manchester");
+			vector<City> cities = { M,L };
+			Assert::IsTrue(M == lookupCityByName("Manchester", cities));
+			Assert::IsFalse(L == lookupCityByName("Manchester", cities));
+		}
+		TEST_METHOD(RouteEqual)
+		{
+			City L(0, 0, 1, "London");
+			City M(0, 5, 4, "Manchester");
+			vector<City> cities = { M,L };
+			Assert::AreEqual(true, Route(cities).operator==(Route({ M,L })));
+			Assert::AreEqual(false, Route(cities).operator==(Route({ L,M })));
+		}
+		TEST_METHOD(CityEqual)
+		{
+			City M(0, 5, 4, "Manchester");
+			City M2(0, 5, 4, "Manchester");
+			City L(0, 5, 4, "London");
+			Assert::AreEqual(true, M2.operator==(M));
+			Assert::AreEqual(false, L.operator==(M));
 		}
 	};
 }
