@@ -11,6 +11,7 @@
 #include <fstream>
 #include <sstream>
 #include <map>
+#include <ctime>
 
 
 using namespace Orienteering;
@@ -292,7 +293,7 @@ vector<int> delta(int &cityNumber, Route &route, Map &m, double &time)
 	double t = route.timeCurrent;
 	for (int i = 0; i < length; ++i) //cycling through all cities
 	{
-		if (t+m.adjacency[cityNumber][deltaUnfiltered[i]]<time)
+		if (t+m.adjacency[cityNumber][deltaUnfiltered[i]]<= time)
 			delta.push_back(deltaUnfiltered[i]);
 	}
 	return delta; //returns all acceptable adjacent cities to cityNumber
@@ -378,6 +379,8 @@ Route next_r(Map &m, Route &r, double &time)
 
 Route Map::solve_h(double &time)
 {
+	time_t start, stop;
+	start = std::time(NULL);
 	Route r_max = Route(vector<City>());
 	int max_profit = -1;
 	for (int i = 0; i < cities.size(); ++i)
@@ -401,7 +404,14 @@ Route Map::solve_h(double &time)
 				r_max = r_new;
 				max_profit = r;
 			}
+
+			stop = std::time(NULL);
+			if (stop - start > 30)
+				break;
 		}
+		stop = std::time(NULL);
+		if (stop - start > 1)
+			break;
 	}
 	return r_max;
 }
